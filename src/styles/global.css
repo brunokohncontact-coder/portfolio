@@ -3430,3 +3430,35 @@ body:not(.loaded) .hero-visual {
   [data-magnetic] { transform: none !important; }
 }
 
+/* ─── SKIP LINK (acessibilidade) ──────────────────────────────────────────
+   Invisível até receber foco via teclado. Quando focado, aparece no topo
+   esquerdo e permite pular toda a navegação direto para o conteúdo.
+   ────────────────────────────────────────────────────────────────────── */
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-loader);
+  padding: 0.75rem 1.25rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius);
+  transform: translateY(-150%);
+  transition: transform 180ms var(--ease-out);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0.75rem);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link { transition: none; }
+}

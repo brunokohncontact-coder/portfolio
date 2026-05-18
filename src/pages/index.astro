@@ -153,6 +153,9 @@ const projetos = [
 ---
 
 <Layout>
+  <!-- ─── SKIP LINK (acessibilidade — teclado) ────────────────────────── -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
   <!-- ─── LOADER ──────────────────────────────────────────────────────── -->
   <div class="loader" id="loader" aria-hidden="true">
     <div class="loader-panel loader-top"></div>
@@ -338,7 +341,7 @@ const projetos = [
       </ul>
 
       <div class="menu-preview" id="menu-preview">
-        <img id="menu-preview-img" src="" alt="" />
+        <img id="menu-preview-img" alt="" decoding="async" />
       </div>
 
       <div class="menu-footer">
@@ -360,7 +363,7 @@ const projetos = [
     </div>
   </div>
 
-  <main>
+  <main id="main-content">
     <!-- ─── HERO ────────────────────────────────────────────────────────── -->
     <section class="hero" aria-label="Apresentação">
       <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
@@ -699,7 +702,7 @@ const projetos = [
             <article class="projeto-panel">
               <a href={p.href} class="projeto-panel-visual" data-cursor="Ver case" data-book={i === 1 ? p.img : null}>
                 {p.img ? (
-                  <img src={p.img} alt={p.title} class="projeto-panel-img" loading="lazy" />
+                  <img src={p.img} alt={p.title} class="projeto-panel-img" loading="lazy" decoding="async" />
                 ) : (
                   <div class="projeto-panel-placeholder">Visual em construção</div>
                 )}
