@@ -1,0 +1,35 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# Claude Code local config (mantém launch.json pra time, mas não settings pessoais)
+.claude/settings.local.json
+
+# Source assets pesados (PSDs, mockups duplicados) — não vão pro repo
+# Os assets servidos pelo site vivem em public/assets/ e são incluídos.
+*.psd
+/assets/
+/Secao_de_Projetos/
+
+

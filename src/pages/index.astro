@@ -1,0 +1,3443 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const headlineWords = 'Comunicação estratégica e design para quem quer mudar o mundo.'.split(' ');
+
+const marqueeItems = [
+  'Comunicação',
+  'Design',
+  'Estratégia',
+  'Motion',
+  'UX / UI',
+  'Automação',
+  'Identidade Visual',
+  'Editorial',
+  'Audiovisual',
+];
+
+const pilares = [
+  {
+    title: 'Estratégia de Comunicação Digital',
+    desc: 'Planejamento editorial, social media, análise de métricas e construção de identidade institucional. Comunicação que começa pelo objetivo e pelo público, antes de qualquer execução.',
+  },
+  {
+    title: 'Design Editorial e Identidade Visual',
+    desc: 'Diagramação, identidade visual, sinalização e materiais impressos. Trabalho com coerência de marca em documentos longos, manuais, planos institucionais e peças avulsas.',
+  },
+  {
+    title: 'Motion Design e Vídeo',
+    desc: 'Animação, edição e direção de peças audiovisuais. Passagem pela OCTO Studio, com animações para Facebook, Eudora e ArtPlan, e produção institucional contínua na UMAPAZ e na Tetra Mais.',
+  },
+  {
+    title: 'UX/UI, Web e Automação',
+    desc: 'Plataformas educacionais, sites institucionais e fluxos automatizados de produção. HTML, CSS, JavaScript, Moodle, WordPress e Power Automate, com uso de IA aplicada à comunicação.',
+  },
+];
+
+const navItems = [
+  { num: '01', label: 'Sobre',    href: '#sobre',    preview: '/assets/01_umapaz_ead/Mockup_1_UMAPAZ_EAD.jpg' },
+  { num: '02', label: 'O que faço', href: '#servicos', preview: '/assets/02_plano_comunicacao/Img_3_Coautoria_Plano_de_Comunicacao.jpg' },
+  { num: '03', label: 'Projetos',  href: '#projetos', preview: '/assets/04_motion_video/capa-motion-reel.jpg' },
+  { num: '04', label: 'Em números', href: '#numeros', preview: '/assets/03_instagram/Screenshot_20240225-185153.png' },
+  { num: '05', label: 'Contato',   href: '#contato', preview: '/assets/02_plano_comunicacao/Img_2_Coautoria_Plano_de_Comunicacao.jpg' },
+];
+
+const numeros = [
+  { val: '+15', sup: 'mil', label: 'novos seguidores no Instagram da UMAPAZ, na minha gestão (de 5 mil para 20 mil)', count: 15 },
+  { val: '800', sup: '+',   label: 'alunos na primeira fase da plataforma EAD ambiental', count: 800 },
+  { val: '30 a 40', sup: '%', label: 'de redução no prazo de produção de materiais com automação', count: null },
+  { val: '1', sup: 'ª',     label: 'plataforma EAD ambiental da cidade de São Paulo', count: null },
+  { val: '~7', sup: '',     label: 'anos de experiência em comunicação institucional', count: null },
+];
+
+const sobreChapters = [
+  {
+    num: '01',
+    eyebrow: 'Quem',
+    title: 'Bruno Rossi Kohn',
+    desc: 'Analista de comunicação e designer multimídia baseado em São Paulo. Trabalho na interseção entre estratégia, design e tecnologia, buscando aplicar essas três frentes em causas com impacto social real.',
+    stats: [{ val: '7+', label: 'anos atuando' }, { val: '∞', label: 'curiosidade' }],
+  },
+  {
+    num: '02',
+    eyebrow: 'Onde',
+    title: 'UMAPAZ, gestão pública',
+    desc: 'Quase sete anos na Universidade Aberta do Meio Ambiente e Cultura de Paz, da Prefeitura de São Paulo. Primeiro estagiário, depois analista de comunicação. Liderei uma equipe de três estagiários e atuei como coordenador audiovisual interino três vezes.',
+    stats: [{ val: '15k+', label: 'seguidores' }, { val: '800', label: 'alunos EAD' }],
+  },
+  {
+    num: '03',
+    eyebrow: 'Como',
+    title: 'Estrutura de equipe',
+    desc: 'A equipe de estagiários me permitiu desenvolver simultaneamente a primeira plataforma de educação ambiental a distância da cidade, co-escrever o Plano de Comunicação institucional e participar do crescimento do Instagram, que saiu de 5 mil para 20 mil seguidores.',
+    stats: [{ val: '3', label: 'estagiários' }, { val: '4', label: 'anos liderando' }],
+  },
+  {
+    num: '04',
+    eyebrow: 'Hoje',
+    title: 'Tetra Mais, consultoria ambiental',
+    desc: 'Atuo como analista pleno na Tetra Mais, consultoria que dá suporte a processos de licenciamento. Continuo aprofundando diagramação técnica, produção audiovisual e automação de fluxos de comunicação com IA.',
+    stats: [{ val: '1', label: 'ano atual' }, { val: '+', label: 'aprofundando' }],
+  },
+  {
+    num: '05',
+    eyebrow: 'Para onde',
+    title: 'Oportunidades com sentido',
+    desc: 'Busco oportunidades remotas em organizações comprometidas com sustentabilidade, equidade econômica e justiça social. Comunicação que serve a causas reais.',
+    stats: [{ val: '🌍', label: 'remoto' }, { val: '✦', label: 'impacto social' }],
+  },
+];
+
+const timeline = [
+  { year: '2018', title: 'Início na UMAPAZ', desc: 'Comecei como estagiário na Universidade Aberta do Meio Ambiente e Cultura de Paz (UMAPAZ).' },
+  { year: '2020', title: 'Frente de comunicação digital', desc: 'Assumi a estratégia digital, planejamento editorial e gestão da equipe de 3 estagiários. Instagram em 5k seguidores.' },
+  { year: '2021', title: 'Plano de Comunicação', desc: 'Co-autoria do documento institucional. Plataforma EAD começa a ser desenhada.' },
+  { year: '2023', title: 'Plataforma EAD no ar', desc: '800 alunos na fase inicial, com alcance nacional. Identidade visual digital própria da UMAPAZ.' },
+  { year: '2024', title: 'Transição para Tetra Mais', desc: 'Saí da UMAPAZ com Instagram em 20k. Hoje atuo como analista pleno em consultoria ambiental.' },
+];
+
+const tags = [
+  'Photoshop', 'Illustrator', 'InDesign', 'After Effects', 'Premiere',
+  'HTML', 'CSS', 'JavaScript', 'Moodle', 'Wordpress',
+  'Figma', 'Power Automate', 'IA', 'Audition',
+];
+
+const projetos = [
+  {
+    num: '01',
+    year: '2020 / 2023',
+    title: 'Plataforma EAD UMAPAZ',
+    desc: 'A primeira plataforma de educação ambiental a distância da cidade de São Paulo. Estruturei o ambiente do zero sobre Moodle, com identidade visual digital própria, dois layouts de curso (síncrono e assíncrono) e um sistema de gamificação calibrado. 800 alunos na fase inicial, com alcance nacional.',
+    tags: ['Moodle', 'HTML/CSS/JS', 'UX', 'Educação'],
+    img: '/assets/01_umapaz_ead/Mockup_1_UMAPAZ_EAD.jpg',
+    href: '/projetos/plataforma-ead-umapaz',
+  },
+  {
+    num: '02',
+    year: '2021',
+    title: 'Plano de Comunicação UMAPAZ',
+    desc: 'Co-autoria do documento que sistematizou tom de voz, identidade visual e diretrizes de redes sociais da instituição. Responsável pelas seções editoriais, pelo manual visual das três unidades e pela diagramação completa.',
+    tags: ['Estratégia', 'Identidade Visual', 'Editorial'],
+    img: '/assets/02_plano_comunicacao/Img_1_Coautoria_Plano_de_Comunicacao.jpg',
+    href: '/projetos/plano-de-comunicacao-umapaz',
+  },
+  {
+    num: '03',
+    year: '2020 / 2024',
+    title: 'Instagram UMAPAZ',
+    desc: 'Liderança da estratégia digital, planejamento editorial e análise de métricas em equipe de três estagiários. O perfil saiu de 5 mil para 20 mil seguidores ao longo de quatro anos, com identidade visual consolidada na grade.',
+    tags: ['Social Media', 'Estratégia', 'Gestão de Equipe'],
+    img: '/assets/03_instagram/Screenshot_20240225-185153.png',
+    href: '/projetos/instagram-umapaz',
+  },
+  {
+    num: '04',
+    year: 'Contínuo',
+    title: 'Motion Design e Vídeo',
+    desc: 'Trabalho contínuo com motion graphics, edição e direção. Animações para Facebook, Eudora e ArtPlan na passagem pela OCTO Studio, e produção institucional na UMAPAZ e na Tetra Mais. Reels disponíveis no Vimeo.',
+    tags: ['After Effects', 'Premiere', 'Direção Audiovisual'],
+    img: '/assets/04_motion_video/capa-motion-reel.jpg',
+    href: '/projetos/motion-design',
+  },
+  {
+    num: '05',
+    year: '2022 / 2024',
+    title: 'Automação de Comunicação',
+    desc: 'Substituí entradas livres por um formulário padronizado, alimentando um fluxo do Power Automate que gerava HTML pronto para o site da Prefeitura. Redução entre 30% e 40% no tempo de produção de materiais.',
+    tags: ['Power Automate', 'Microsoft 365', 'Processo'],
+    img: null,
+    href: '/projetos/automacao-comunicacao',
+  },
+];
+---
+
+<Layout>
+  <!-- ─── LOADER ──────────────────────────────────────────────────────── -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-panel loader-top"></div>
+    <div class="loader-panel loader-bottom"></div>
+    <div class="loader-label">
+      Portfolio
+      <span class="loader-name">Bruno Rossi Kohn</span>
+    </div>
+    <div class="loader-counter" id="loader-counter">0</div>
+  </div>
+
+  <!-- ─── CUSTOM CURSOR ──────────────────────────────────────────────── -->
+  <div class="cursor is-hidden" id="cursor" aria-hidden="true">
+    <span class="cursor-label" id="cursor-label"></span>
+  </div>
+
+  <!-- ─── TOP PROGRESS BAR ─────────────────────────────────────────── -->
+  <div class="progress-line" id="progress-line" aria-hidden="true"></div>
+
+  <!-- ─── GENERATIVE SVG (cursor draws) ─────────────────────────────── -->
+  <svg class="gen-svg" id="gen-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"></svg>
+
+  <!-- ─── MOUSE HEATMAP CANVAS ──────────────────────────────────────── -->
+  <canvas class="heatmap-canvas" id="heatmap-canvas" aria-hidden="true"></canvas>
+
+  <!-- ─── VORONOI BACKGROUND CANVAS ────────────────────────────────── -->
+  <canvas class="voronoi-canvas" id="voronoi-canvas" aria-hidden="true"></canvas>
+
+  <!-- ─── CURSOR PET (com personalidade) ───────────────────────────── -->
+  <div class="cursor-pet" id="cursor-pet" data-state="follow" aria-hidden="true">
+    <div class="cursor-pet-body">
+      <span class="cursor-pet-eye"><span class="cursor-pet-pupil"></span></span>
+      <span class="cursor-pet-eye"><span class="cursor-pet-pupil"></span></span>
+      <span class="cursor-pet-mouth"></span>
+    </div>
+    <div class="cursor-pet-bubble" id="cursor-pet-bubble"></div>
+  </div>
+
+  <!-- ─── PONG OVERLAY (easter egg) ────────────────────────────────── -->
+  <div class="pong-overlay" id="pong-overlay" aria-hidden="true">
+    <button class="pong-close" id="pong-close">Sair · ESC</button>
+    <div class="pong-score">
+      <div>
+        <span id="pong-score-player">0</span>
+        <div class="pong-score-label">Você</div>
+      </div>
+      <div>
+        <span id="pong-score-ai">0</span>
+        <div class="pong-score-label">CPU</div>
+      </div>
+    </div>
+    <canvas class="pong-canvas" id="pong-canvas" width="720" height="420"></canvas>
+    <p class="pong-hint">Mexa o mouse para controlar a paleta</p>
+  </div>
+
+  <!-- ─── CURSOR TRAIL ─────────────────────────────────────────────── -->
+  <div id="cursor-trails" aria-hidden="true">
+    <div class="cursor-trail" style="opacity: 0.55"></div>
+    <div class="cursor-trail" style="opacity: 0.45"></div>
+    <div class="cursor-trail" style="opacity: 0.35"></div>
+    <div class="cursor-trail" style="opacity: 0.25"></div>
+    <div class="cursor-trail" style="opacity: 0.18"></div>
+    <div class="cursor-trail" style="opacity: 0.12"></div>
+  </div>
+
+  <!-- ─── HELP OVERLAY (keyboard shortcuts) ──────────────────────── -->
+  <div class="help-overlay" id="help-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="help-title" tabindex="-1">
+    <div class="help-card">
+      <h3 id="help-title">Atalhos de teclado</h3>
+      <ul class="help-list">
+        <li><span>Abrir / fechar menu</span><span class="help-key">M</span></li>
+        <li><span>Ir para Projetos</span><span class="help-key">P</span></li>
+        <li><span>Ir para Contato</span><span class="help-key">C</span></li>
+        <li><span>Voltar ao topo</span><span class="help-key">T</span></li>
+        <li><span>Mostrar / ocultar atalhos</span><span class="help-key">?</span></li>
+        <li><span>Fechar tudo</span><span class="help-key">Esc</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── CURTAIN (page transition) ──────────────────────────────────── -->
+  <div class="curtain" id="curtain" aria-hidden="true">
+    <div class="curtain-col"></div>
+    <div class="curtain-col"></div>
+    <div class="curtain-col"></div>
+    <div class="curtain-col"></div>
+    <div class="curtain-label">
+      <span class="curtain-label-eyebrow" id="curtain-label-eyebrow">Carregando</span>
+      <span class="curtain-label-target" id="curtain-label-target">—</span>
+      <div class="curtain-label-bar"></div>
+    </div>
+  </div>
+
+  <!-- ─── COMMAND PALETTE (CMD+K) ──────────────────────────────────────── -->
+  <div class="palette" id="palette" data-state="closed" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Paleta de comandos" tabindex="-1">
+    <div class="palette-backdrop" id="palette-backdrop"></div>
+    <div class="palette-modal">
+      <div class="palette-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="20" y1="20" x2="16.5" y2="16.5" stroke-linecap="round" />
+        </svg>
+        <input
+          type="text"
+          class="palette-input"
+          id="palette-input"
+          placeholder="Buscar seção, projeto ou ação..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <span class="palette-kbd">ESC</span>
+      </div>
+      <ul class="palette-list" id="palette-list"></ul>
+    </div>
+  </div>
+
+  <!-- ─── SIDE RAIL (section indicator) ──────────────────────────────── -->
+  <ul class="side-rail" id="side-rail" aria-label="Navegação rápida">
+    {navItems.map((n) => (
+      <li class="side-rail-item">
+        <a href={n.href} class="side-rail-link" data-section={n.href.slice(1)}>
+          <span class="side-rail-label">{n.num} {n.label}</span>
+          <span class="side-rail-dot"></span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <!-- ─── NAV ─────────────────────────────────────────────────────────── -->
+  <header class="nav" id="main-nav">
+    <a href="/" class="nav-logo" aria-label="Bruno Kohn">BK</a>
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <a
+        href="/assets/Bruno_Kohn_CV.pdf"
+        target="_blank"
+        rel="noopener"
+        class="nav-cta"
+      >
+        Currículo ↗
+      </a>
+      <button
+        class="menu-trigger"
+        id="menu-trigger"
+        aria-expanded="false"
+        aria-controls="menu-overlay"
+        aria-label="Abrir menu"
+      >
+        <span class="menu-trigger-label" id="menu-trigger-label">Menu</span>
+        <span class="menu-trigger-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── FULLSCREEN MENU OVERLAY ────────────────────────────────────── -->
+  <div class="menu-overlay" id="menu-overlay" data-state="closed" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu de navegação" tabindex="-1">
+    <div class="menu-bg"></div>
+    <div class="menu-inner">
+      <div class="menu-meta">
+        <div>
+          Portfolio
+          <span class="menu-meta-name">Bruno Rossi Kohn</span>
+        </div>
+        <div>
+          Índice
+        </div>
+      </div>
+
+      <ul class="menu-list">
+        {navItems.map((n, i) => (
+          <li>
+            <a
+              href={n.href}
+              class="menu-item"
+              style={`--mi:${i}`}
+              data-menu-link
+              data-preview={n.preview}
+            >
+              <span class="menu-item-num">{n.num}</span>
+              <span class="menu-item-label">{n.label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="menu-preview" id="menu-preview">
+        <img id="menu-preview-img" src="" alt="" />
+      </div>
+
+      <div class="menu-footer">
+        <div class="menu-footer-col">
+          <p class="menu-footer-label">Contato</p>
+          <a href="mailto:brunokohn.contact@gmail.com">brunokohn.contact@gmail.com</a>
+          <a href="https://wa.me/5511991767271" target="_blank" rel="noopener">+55 11 99176-7271</a>
+        </div>
+        <div class="menu-footer-col">
+          <p class="menu-footer-label">Social</p>
+          <a href="https://www.behance.net/brunorossiea6a" target="_blank" rel="noopener">Behance ↗</a>
+          <a href="https://brunokohn.myportfolio.com" target="_blank" rel="noopener">Portfolio atual ↗</a>
+        </div>
+        <div class="menu-footer-col">
+          <p class="menu-footer-label">Currículo</p>
+          <a href="/assets/Bruno_Kohn_CV.pdf" target="_blank" rel="noopener">Download PDF ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ─── HERO ────────────────────────────────────────────────────────── -->
+    <section class="hero" aria-label="Apresentação">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-backdrop" id="hero-backdrop" aria-hidden="true">
+        <span class="hero-backdrop-text" id="hero-backdrop-text">Bruno Rossi Kohn · Bruno Rossi Kohn · </span>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">
+          Bruno Kohn, São Paulo
+          <span class="clock-meta" style="margin-left: 1rem;">
+            <span class="clock-dot" aria-hidden="true"></span>
+            <span id="clock-time">--:--</span>
+          </span>
+        </p>
+
+        <h1 class="hero-headline">
+          {headlineWords.map((w, i) => (
+            <Fragment>
+              <span class="word" style={`--i:${i}`}>{w}</span>{' '}
+            </Fragment>
+          ))}
+        </h1>
+
+        <p class="hero-subline">
+          Analista de comunicação e designer multimídia com passagem pela
+          gestão pública e pelo terceiro setor. Crio plataformas, campanhas e
+          sistemas que funcionam, e que têm sentido.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#projetos" class="btn-primary" data-magnetic data-cursor="Ver">Ver projetos</a>
+          <a href="#contato" class="btn-ghost">Falar comigo</a>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-hidden="true">
+        <span class="hero-bk" id="hero-bk">BK</span>
+
+        <!-- 3D Tag Cloud (HTML 3D transforms) -->
+        <div class="tag-cloud-wrap" id="tag-cloud-wrap">
+          <div class="tag-cloud" id="tag-cloud">
+            {tags.map((tag, i) => {
+              const phi = Math.acos(-1 + (2 * i) / tags.length);
+              const theta = Math.sqrt(tags.length * Math.PI) * phi;
+              const radius = 95;
+              const x = radius * Math.cos(theta) * Math.sin(phi);
+              const y = radius * Math.sin(theta) * Math.sin(phi);
+              const z = radius * Math.cos(phi);
+              return (
+                <span
+                  class="tag-cloud-item"
+                  style={`transform: translate3d(${x}px, ${y}px, ${z}px); margin-left: -2.5em; margin-top: -0.7em;`}
+                >
+                  {tag}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+
+        <div class="hero-meta" id="hero-meta">
+          <div class="meta-row">
+            <span class="meta-key">Desde</span>
+            <span class="meta-val">2018</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Base</span>
+            <span class="meta-val">São Paulo, BR</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Foco</span>
+            <span class="meta-val">Comunicação &amp; Design</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Status</span>
+            <span class="meta-val"><span class="meta-dot"></span>Aberto a remoto</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="hero-scroll" aria-hidden="true">Scroll</div>
+    </section>
+
+    <!-- ─── SOBRE (horizontal stack) ──────────────────────────────────────── -->
+    <div class="section-rule"></div>
+
+    <section class="sobre-h-section" id="sobre" aria-labelledby="sobre-titulo">
+      <span class="section-side-label" aria-hidden="true">01 / Sobre</span>
+
+      <div class="section" style="padding-bottom: 0;">
+        <div class="section-header reveal">
+          <span class="section-num">01</span>
+          <h2 class="section-title" data-scramble id="sobre-titulo">Sobre</h2>
+        </div>
+      </div>
+
+      <div class="sobre-h-pin" id="sobre-pin">
+        <div class="sobre-h-track" id="sobre-track">
+          {sobreChapters.map((c) => (
+            <article class="sobre-panel">
+              <div class="sobre-panel-meta">
+                <span class="sobre-panel-num">{c.num}</span>
+                <h3 class="sobre-panel-title">{c.title}</h3>
+              </div>
+              <div class="sobre-panel-content">
+                <span class="sobre-panel-eyebrow">{c.eyebrow}</span>
+                <p class="sobre-panel-desc">{c.desc}</p>
+                <div class="sobre-panel-stats">
+                  {c.stats.map(s => (
+                    <div class="sobre-panel-stat">
+                      <span class="sobre-panel-stat-val">{s.val}</span>
+                      <span class="sobre-panel-stat-label">{s.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="sobre-h-progress" aria-hidden="true">
+          {sobreChapters.map((_, i) => (
+            <span class={`sobre-h-dot ${i === 0 ? 'is-active' : ''}`}></span>
+          ))}
+        </div>
+      </div>
+
+      <div class="section" style="padding-top: 4rem;">
+
+      <div class="sobre-grid">
+        <div class="sobre-body reveal d1">
+          <p>
+            Sou Bruno Kohn, analista de comunicação e designer multimídia
+            baseado em São Paulo. Trabalho na interseção entre estratégia,
+            design e tecnologia, e busco aplicar essas três frentes em causas
+            com impacto social real.
+          </p>
+          <p>
+            Passei quase sete anos na UMAPAZ, a unidade de educação ambiental
+            da Prefeitura de São Paulo, primeiro como estagiário e depois como
+            analista de comunicação. Durante esse período, liderei uma equipe
+            de três estagiários e atuei em três ocasiões como coordenador
+            audiovisual interino. Foi essa estrutura de equipe que me permitiu
+            desenvolver simultaneamente a primeira plataforma de educação
+            ambiental a distância da cidade, co-escrever o Plano de
+            Comunicação institucional e participar do crescimento do perfil do
+            Instagram, que saiu de 5 mil para 20 mil seguidores ao longo da
+            minha gestão.
+          </p>
+          <p>
+            Hoje atuo como analista pleno na Tetra Mais, consultoria ambiental
+            que dá suporte a processos de licenciamento. Continuo aprofundando
+            minha prática em diagramação técnica, produção audiovisual e
+            automação de fluxos de comunicação com inteligência artificial.
+          </p>
+        </div>
+
+        <div class="sobre-sidebar reveal d2">
+          <ul class="sobre-bullets">
+            <li>
+              <span class="bullet-marker" aria-hidden="true"></span>
+              <span>
+                Criei a primeira plataforma de educação ambiental a distância
+                da cidade de São Paulo, com 800 alunos na fase inicial e
+                alcance nacional.
+              </span>
+            </li>
+            <li>
+              <span class="bullet-marker" aria-hidden="true"></span>
+              <span>
+                Liderei a frente de comunicação digital da UMAPAZ por quatro
+                anos, em equipe de três estagiários, com crescimento de 5 mil
+                para 20 mil seguidores no Instagram.
+              </span>
+            </li>
+            <li>
+              <span class="bullet-marker" aria-hidden="true"></span>
+              <span>
+                Construí automações que reduziram entre 30% e 40% o tempo de
+                produção de materiais de comunicação.
+              </span>
+            </li>
+          </ul>
+
+          <p class="sobre-values">
+            Busco oportunidades remotas em organizações comprometidas com
+            sustentabilidade, equidade econômica e justiça social.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline scrub interativa -->
+      <div class="timeline reveal" id="timeline">
+        <div class="timeline-header">
+          <span>Linha do tempo</span>
+          <span>Arraste para navegar</span>
+        </div>
+        <div class="timeline-track-wrap" id="timeline-track-wrap">
+          <div class="timeline-track">
+            <div class="timeline-progress" id="timeline-progress"></div>
+          </div>
+          <div class="timeline-handle" id="timeline-handle"></div>
+          <div class="timeline-markers">
+            {timeline.map((t) => (
+              <div class="timeline-marker">
+                <span class="timeline-marker-year">{t.year}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="timeline-content" id="timeline-content">
+          {timeline.map((t, i) => (
+            <div class={`timeline-card ${i === 0 ? 'is-active' : ''}`} data-idx={i}>
+              <div class="timeline-card-year">{t.year}</div>
+              <div class="timeline-card-title">{t.title}</div>
+              <p class="timeline-card-desc">{t.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ─── 3D BK SCENE (dedicated scene) ────────────────────────────────── -->
+    <section class="scene-3d" id="scene-3d" aria-label="Cena 3D">
+      <canvas class="scene-3d-canvas" id="scene-3d-canvas"></canvas>
+      <div class="scene-3d-overlay">
+        <p class="scene-3d-eyebrow">Marca pessoal</p>
+      </div>
+      <p class="scene-3d-hint" aria-hidden="true">Mexa o mouse · Clique e arraste</p>
+    </section>
+
+    <!-- ─── PHYSICS PLAYGROUND ────────────────────────────────────────────── -->
+    <section class="physics-zone" id="physics" aria-label="Playground físico">
+      <canvas class="physics-canvas" id="physics-canvas"></canvas>
+      <div class="physics-overlay">
+        <p class="physics-eyebrow">Playground</p>
+        <h2 class="physics-title">Arraste as ferramentas</h2>
+      </div>
+      <p class="physics-hint" aria-hidden="true">Click + drag · Solta para jogar</p>
+    </section>
+
+    <!-- ─── O QUE FAÇO (sticky-pinned panels) ────────────────────────────── -->
+    <div class="section-rule"></div>
+
+    <section class="pilares-stack" id="servicos" aria-labelledby="servicos-titulo">
+      <span class="section-side-label" aria-hidden="true">02 / Disciplinas</span>
+
+      {pilares.map((p, i) => {
+        const num = String(i + 1).padStart(2, '0');
+        const nextLabel = i < pilares.length - 1 ? `Próximo: ${pilares[i + 1].title.split(' ').slice(0, 3).join(' ')}` : 'Fim da seção';
+        return (
+          <article class="pilar-panel" data-idx={i} data-mark={num} aria-label={p.title}>
+            <header class="pilar-panel-head">
+              <span>02 / Disciplinas</span>
+              <span>{num} / 04</span>
+            </header>
+
+            <div class="pilar-panel-body">
+              <div class="pilar-panel-main">
+                <span class="pilar-panel-num">{num}</span>
+                <h3 class="pilar-panel-title" data-scramble>{p.title}</h3>
+                <p class="pilar-panel-desc">{p.desc}</p>
+              </div>
+
+              {i === 0 && (
+                <svg class="pilar-panel-icon-big" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <circle cx="16" cy="16" r="14" />
+                  <circle cx="16" cy="16" r="9" />
+                  <circle cx="16" cy="16" r="4" />
+                  <circle cx="16" cy="16" r="1.5" fill="currentColor" />
+                </svg>
+              )}
+              {i === 1 && (
+                <svg class="pilar-panel-icon-big" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <rect x="3" y="3" width="12" height="15" />
+                  <rect x="17" y="3" width="12" height="6" />
+                  <rect x="17" y="11" width="12" height="18" />
+                  <rect x="3" y="20" width="12" height="9" />
+                </svg>
+              )}
+              {i === 2 && (
+                <svg class="pilar-panel-icon-big" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <circle cx="16" cy="16" r="14" />
+                  <path d="M13 10 L23 16 L13 22 Z" fill="currentColor" stroke="none" />
+                </svg>
+              )}
+              {i === 3 && (
+                <svg class="pilar-panel-icon-big" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="11 8 4 16 11 24" />
+                  <polyline points="21 8 28 16 21 24" />
+                  <line x1="20" y1="4" x2="12" y2="28" />
+                </svg>
+              )}
+            </div>
+
+            <footer class="pilar-panel-foot">
+              <div class="pilar-panel-progress" aria-hidden="true">
+                {pilares.map((_, j) => (
+                  <span class={`pilar-dot ${j === i ? 'active' : ''}`}></span>
+                ))}
+              </div>
+              <span class="pilar-next">{nextLabel} →</span>
+            </footer>
+          </article>
+        );
+      })}
+    </section>
+
+    <!-- ─── MARQUEE ─────────────────────────────────────────────────────── -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        {[...marqueeItems, ...marqueeItems].map((item) => (
+          <span class="marquee-item">
+            {item}
+            <span class="marquee-dot"></span>
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- ─── PROJETOS (horizontal scroll) ────────────────────────────────── -->
+    <section class="projetos-h-section" id="projetos" aria-labelledby="projetos-titulo">
+      <span class="section-side-label" aria-hidden="true">03 / Projetos</span>
+      <div class="projetos-h-header">
+        <div class="section-header reveal">
+          <span class="section-num">03</span>
+          <h2 class="section-title" data-scramble id="projetos-titulo">Projetos selecionados</h2>
+        </div>
+      </div>
+
+      <div class="projetos-h-pin" id="projetos-pin">
+        <div class="projetos-h-hint" aria-hidden="true">Arraste / Role</div>
+
+        <div class="projetos-h-track" id="projetos-track">
+          {projetos.map((p, i) => (
+            <article class="projeto-panel">
+              <a href={p.href} class="projeto-panel-visual" data-cursor="Ver case" data-book={i === 1 ? p.img : null}>
+                {p.img ? (
+                  <img src={p.img} alt={p.title} class="projeto-panel-img" loading="lazy" />
+                ) : (
+                  <div class="projeto-panel-placeholder">Visual em construção</div>
+                )}
+              </a>
+              <div class="projeto-panel-content">
+                <div class="projeto-panel-meta">
+                  <span>Projeto {p.num}</span>
+                  <span>{p.year}</span>
+                </div>
+                <h3 class="projeto-panel-title" data-scramble>{p.title}</h3>
+                <p class="projeto-panel-desc">{p.desc}</p>
+                <div class="projeto-panel-tags">
+                  {p.tags.map(t => <span class="tag">{t}</span>)}
+                </div>
+                <a href={p.href} class="projeto-panel-cta">Ver case study</a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="projetos-h-progress" aria-hidden="true">
+          <span class="progress-current" id="progress-current">01</span>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+          <span class="progress-total">0{projetos.length}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── NÚMEROS (sticky-stacked full-screen cards) ────────────────────── -->
+    <section class="numeros-stack" id="numeros" aria-label="Resultados em números" data-theme="dark">
+      <span class="section-side-label" aria-hidden="true">04 / Resultados</span>
+      <canvas class="numeros-noise-canvas" id="numeros-noise" aria-hidden="true"></canvas>
+
+      {numeros.map((n, i) => (
+        <article class="numero-card" data-idx={i}>
+          <header class="numero-card-head">
+            <span>04 / Resultados</span>
+            <span>{String(i + 1).padStart(2, '0')} / 05</span>
+          </header>
+
+          <div class="numero-card-body">
+            <div>
+              <div class="numero-card-val">
+                {n.val}<span class="numero-card-sup">{n.sup}</span>
+              </div>
+              <p class="numero-card-label">{n.label}</p>
+            </div>
+          </div>
+
+          <footer class="numero-card-foot">
+            <div class="numero-card-progress" aria-hidden="true">
+              {numeros.map((_, j) => (
+                <span class={`numero-progress-dot ${j === i ? 'active' : ''}`}></span>
+              ))}
+            </div>
+            <span>{i < numeros.length - 1 ? 'Próximo →' : 'Fim'}</span>
+          </footer>
+        </article>
+      ))}
+    </section>
+
+    <!-- ─── MARQUEE 2 (dark, depois dos numeros) ────────────────────────── -->
+    <div class="marquee marquee--dark" aria-hidden="true">
+      <div class="marquee-track">
+        {[...['Disponível para projetos', 'Vagas remotas', 'Impacto social', 'Sustentabilidade', 'Justiça social'], ...['Disponível para projetos', 'Vagas remotas', 'Impacto social', 'Sustentabilidade', 'Justiça social']].map((item) => (
+          <span class="marquee-item">
+            {item}
+            <span class="marquee-dot"></span>
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- ─── CONTATO ──────────────────────────────────────────────────────── -->
+    <section class="section" id="contato" aria-label="Contato">
+      <span class="section-side-label" aria-hidden="true">05 / Contato</span>
+      <div class="contato-inner">
+        <div class="reveal">
+          <h2 class="contato-heading">Quer conversar?</h2>
+          <p class="contato-subtext">
+            Estou disponível para projetos, vagas remotas e colaborações em
+            causas com impacto social e ambiental.
+          </p>
+        </div>
+
+        <div class="contato-links reveal d1">
+          <a href="mailto:brunokohn.contact@gmail.com" class="contato-link">
+            <span class="contato-link-label">E-mail</span>
+            <span class="contato-link-value">brunokohn.contact@gmail.com ↗</span>
+          </a>
+          <a
+            href="https://wa.me/5511991767271"
+            class="contato-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contato-link-label">WhatsApp</span>
+            <span class="contato-link-value">+55 11 99176-7271 ↗</span>
+          </a>
+          <a
+            href="https://www.behance.net/brunorossiea6a"
+            class="contato-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contato-link-label">Behance</span>
+            <span class="contato-link-value">behance.net/brunorossiea6a ↗</span>
+          </a>
+          <a
+            href="https://brunokohn.myportfolio.com"
+            class="contato-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contato-link-label">Portfolio atual</span>
+            <span class="contato-link-value">brunokohn.myportfolio.com ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ─── AUDIO TOGGLE (botao standalone) ──────────────────────────────── -->
+  <button class="audio-toggle-fab" id="audio-toggle" aria-label="Ativar áudio" aria-pressed="false" data-cursor="Som">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" id="audio-icon">
+      <path d="M11 5 L7 9 H4 V15 H7 L11 19 Z" stroke-linejoin="round" />
+      <line x1="17" y1="9" x2="17" y2="15" stroke-linecap="round" opacity="0.4" />
+      <line x1="20" y1="7" x2="20" y2="17" stroke-linecap="round" opacity="0.2" />
+    </svg>
+    <div class="audio-viz" aria-hidden="true">
+      <span class="audio-viz-bar"></span>
+      <span class="audio-viz-bar"></span>
+      <span class="audio-viz-bar"></span>
+      <span class="audio-viz-bar"></span>
+    </div>
+  </button>
+
+  <!-- ─── PARTY TOAST ─────────────────────────────────────────────────────── -->
+  <div class="party-toast" id="party-toast" aria-hidden="true">Party mode activated ✦</div>
+
+  <!-- ─── FOOTER ──────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer">
+      <p class="footer-copy">© 2025 Bruno Kohn</p>
+      <div class="footer-links">
+        <a href="mailto:brunokohn.contact@gmail.com">E-mail</a>
+        <a href="/assets/Bruno_Kohn_CV.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="https://www.behance.net/brunorossiea6a" target="_blank" rel="noopener">Behance</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── SCRIPTS ──────────────────────────────────────────────────────────── -->
+  <script>
+    import Lenis from 'lenis';
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ─── FOCUS TRAP (dialog accessibility) ──────────────────
+    // Mantém Tab/Shift+Tab dentro do dialog enquanto aberto.
+    // Restaura foco no elemento que abriu o dialog ao fechar.
+    const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    type TrapHandle = { release: () => void };
+    const activeTraps = new Map<HTMLElement, TrapHandle>();
+
+    const trapFocus = (root: HTMLElement): TrapHandle => {
+      const previouslyFocused = document.activeElement as HTMLElement | null;
+
+      const getFocusables = () =>
+        Array.from(root.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR))
+          .filter((el) => el.offsetParent !== null || el === root);
+
+      const handleKey = (e: KeyboardEvent) => {
+        if (e.key !== 'Tab') return;
+        const focusables = getFocusables();
+        if (focusables.length === 0) {
+          e.preventDefault();
+          root.focus();
+          return;
+        }
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        const current = document.activeElement as HTMLElement | null;
+
+        if (e.shiftKey) {
+          if (current === first || !root.contains(current)) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (current === last || !root.contains(current)) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      };
+
+      document.addEventListener('keydown', handleKey, true);
+
+      requestAnimationFrame(() => {
+        const focusables = getFocusables();
+        (focusables[0] || root).focus({ preventScroll: true });
+      });
+
+      const handle: TrapHandle = {
+        release: () => {
+          document.removeEventListener('keydown', handleKey, true);
+          if (previouslyFocused && document.body.contains(previouslyFocused)) {
+            previouslyFocused.focus({ preventScroll: true });
+          }
+          activeTraps.delete(root);
+        },
+      };
+      activeTraps.set(root, handle);
+      return handle;
+    };
+
+    const releaseTrap = (root: HTMLElement) => {
+      activeTraps.get(root)?.release();
+    };
+
+    // ─── MOUSEMOVE PUB/SUB ──────────────────────────────────
+    // Um único listener global de mousemove. Cada feature registra um
+    // callback via onMouseMove. Antes tinha 15+ listeners separados —
+    // cada movimento do mouse disparava 15 callbacks com getBoundingClientRect.
+    const mouseMoveSubscribers: Array<(e: MouseEvent) => void> = [];
+    window.addEventListener('mousemove', (e: MouseEvent) => {
+      for (let i = 0; i < mouseMoveSubscribers.length; i++) {
+        mouseMoveSubscribers[i](e);
+      }
+    }, { passive: true });
+    const onMouseMove = (cb: (e: MouseEvent) => void) => {
+      mouseMoveSubscribers.push(cb);
+    };
+
+    // ─── ANIMATION GATING ───────────────────────────────────
+    // Pausa RAF loops quando aba está em background OU quando a seção
+    // que hospeda a animação está fora do viewport. Mata o uso de CPU/GPU
+    // contínuo causado por dezenas de loops decorativos rodando em paralelo.
+    let pageActive = !document.hidden;
+    document.addEventListener('visibilitychange', () => {
+      pageActive = !document.hidden;
+    });
+
+    // Cria um observador de viewport para um elemento. Cada loop pode
+    // checar `visible.current` antes de processar o frame.
+    const observeVisibility = (
+      target: Element | null,
+      options: IntersectionObserverInit = { threshold: 0, rootMargin: '200px' },
+    ): { current: boolean } => {
+      const state = { current: false };
+      if (!target) { state.current = true; return state; }
+      const io = new IntersectionObserver(([entry]) => {
+        state.current = entry.isIntersecting;
+      }, options);
+      io.observe(target);
+      return state;
+    };
+
+    // ─── LOADER ──────────────────────────────────────────────
+    document.body.classList.add('loading');
+
+    const loader = document.getElementById('loader');
+    const counterEl = document.getElementById('loader-counter');
+    const loadDuration = 1300;
+    const loadStart = performance.now();
+
+    const loadTick = (now: number) => {
+      const elapsed = now - loadStart;
+      const pct = Math.min(100, Math.round((elapsed / loadDuration) * 100));
+      if (counterEl) counterEl.textContent = String(pct);
+      if (pct < 100) {
+        requestAnimationFrame(loadTick);
+      } else {
+        setTimeout(() => {
+          loader?.classList.add('done');
+          document.body.classList.remove('loading');
+          document.body.classList.add('loaded');
+          setTimeout(() => loader?.remove(), 1300);
+        }, 180);
+      }
+    };
+    requestAnimationFrame(loadTick);
+
+    // ─── LENIS SMOOTH SCROLL + GSAP TICKER ─────────────────
+    const lenis = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const href = (a as HTMLAnchorElement).getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          lenis.scrollTo(target as HTMLElement, { offset: -40 });
+        }
+      });
+    });
+
+    // ─── NAV scroll state ────────────────────────────────────
+    const nav = document.getElementById('main-nav');
+    if (nav) {
+      lenis.on('scroll', ({ scroll }: { scroll: number }) => {
+        nav.classList.toggle('scrolled', scroll > 48);
+      });
+    }
+
+    // ─── REVEAL on scroll ────────────────────────────────────
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.reveal, .section-rule').forEach((el) => io.observe(el));
+
+    // ─── NUMBER COUNTER ──────────────────────────────────────
+    const counterIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            const target = parseInt(el.dataset.count || '0', 10);
+            const duration = 1400;
+            const start = performance.now();
+            const tick = (now: number) => {
+              const t = Math.min(1, (now - start) / duration);
+              const eased = 1 - Math.pow(1 - t, 4);
+              const val = Math.round(target * eased);
+              el.textContent = val.toLocaleString('pt-BR');
+              if (t < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+            counterIO.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    document.querySelectorAll('[data-count]').forEach((el) => counterIO.observe(el));
+
+    // ─── CUSTOM CURSOR ───────────────────────────────────────
+    const cursor = document.getElementById('cursor');
+    const cursorLabel = document.getElementById('cursor-label');
+    let mx = 0, my = 0, cx = 0, cy = 0;
+
+    const showCursor = () => cursor?.classList.remove('is-hidden');
+
+    onMouseMove((e) => {
+      mx = e.clientX;
+      my = e.clientY;
+      showCursor();
+    });
+
+    const cursorTick = () => {
+      if (!pageActive) {
+        requestAnimationFrame(cursorTick);
+        return;
+      }
+      cx += (mx - cx) * 0.22;
+      cy += (my - cy) * 0.22;
+      if (cursor) cursor.style.transform = `translate(${cx}px, ${cy}px)`;
+      requestAnimationFrame(cursorTick);
+    };
+    requestAnimationFrame(cursorTick);
+
+    document.addEventListener('mouseleave', () => cursor?.classList.add('is-hidden'));
+    document.addEventListener('mouseenter', () => showCursor());
+
+    // Hover states (atualizado também para dom dinâmico via delegação)
+    const hoverSelector = 'a, button, [data-cursor]';
+    document.addEventListener('mouseover', (e) => {
+      const target = (e.target as HTMLElement)?.closest(hoverSelector) as HTMLElement | null;
+      if (!target || !cursor) return;
+      const label = target.dataset.cursor;
+      if (label) {
+        cursor.classList.remove('is-hover');
+        cursor.classList.add('is-text');
+        if (cursorLabel) cursorLabel.textContent = label;
+      } else {
+        cursor.classList.remove('is-text');
+        cursor.classList.add('is-hover');
+      }
+    });
+    document.addEventListener('mouseout', (e) => {
+      const target = (e.target as HTMLElement)?.closest(hoverSelector);
+      if (!target || !cursor) return;
+      cursor.classList.remove('is-hover', 'is-text');
+      if (cursorLabel) cursorLabel.textContent = '';
+    });
+
+    // ─── MAGNETIC BUTTONS ────────────────────────────────────
+    document.querySelectorAll<HTMLElement>('[data-magnetic]').forEach((el) => {
+      const strength = 0.35;
+      const radius = 100;
+      onMouseMove((e) => {
+        const rect = el.getBoundingClientRect();
+        const cxEl = rect.left + rect.width / 2;
+        const cyEl = rect.top + rect.height / 2;
+        const dx = e.clientX - cxEl;
+        const dy = e.clientY - cyEl;
+        const d = Math.hypot(dx, dy);
+        if (d < radius + Math.max(rect.width, rect.height) / 2) {
+          el.style.transform = `translate(${dx * strength}px, ${dy * strength}px)`;
+        } else {
+          el.style.transform = '';
+        }
+      });
+      el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    });
+
+    // ─── HERO MOUSE PARALLAX (unificado) ─────────────────────
+    // Um único handler controla heroBk + heroMeta. No desktop adiciona
+    // rotação 3D no monograma; no mobile apenas o translate suave.
+    const heroBk = document.getElementById('hero-bk');
+    const heroMeta = document.getElementById('hero-meta');
+    const hero = document.querySelector('.hero');
+    if (hero && heroBk) {
+      const heroIsDesktop = window.matchMedia('(min-width: 769px)').matches;
+      const heroEl = hero as HTMLElement;
+      heroEl.addEventListener('mousemove', (e) => {
+        const rect = heroEl.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        if (heroIsDesktop) {
+          heroBk.style.transform =
+            `perspective(1400px) rotateY(${x * 28}deg) rotateX(${y * -18}deg) translateZ(20px) translate(${x * -16}px, ${y * -10}px)`;
+        } else {
+          heroBk.style.transform = `translate(${x * -40}px, ${y * -25}px)`;
+        }
+        if (heroMeta) heroMeta.style.transform = `translate(${x * 14}px, ${y * 10}px)`;
+      });
+      heroEl.addEventListener('mouseleave', () => {
+        heroBk.style.transform = '';
+        if (heroMeta) heroMeta.style.transform = '';
+      });
+    }
+
+    // ─── 3D TILT em [data-tilt] ─────────────────────────────
+    document.querySelectorAll<HTMLElement>('[data-tilt]').forEach((el) => {
+      const img = el.querySelector('img, .projeto-panel-placeholder') as HTMLElement | null;
+      const max = 8; // degrees
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        el.style.transform = `perspective(1100px) rotateY(${x * max}deg) rotateX(${y * -max}deg)`;
+        if (img) img.style.transform = `translateZ(40px) scale(1.04)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+        if (img) img.style.transform = '';
+      });
+    });
+
+    // ─── FULLSCREEN MENU ─────────────────────────────────────
+    const menuTrigger = document.getElementById('menu-trigger');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const menuTriggerLabel = document.getElementById('menu-trigger-label');
+    const menuPreview = document.getElementById('menu-preview');
+    const menuPreviewImg = document.getElementById('menu-preview-img') as HTMLImageElement | null;
+
+    const openMenu = () => {
+      if (!menuOverlay || !menuTrigger) return;
+      menuOverlay.dataset.state = 'open';
+      menuOverlay.setAttribute('aria-hidden', 'false');
+      menuTrigger.setAttribute('aria-expanded', 'true');
+      if (menuTriggerLabel) menuTriggerLabel.textContent = 'Fechar';
+      document.body.classList.add('menu-open');
+      lenis.stop();
+      trapFocus(menuOverlay as HTMLElement);
+    };
+
+    const closeMenu = () => {
+      if (!menuOverlay || !menuTrigger) return;
+      menuOverlay.dataset.state = 'closing';
+      menuTrigger.setAttribute('aria-expanded', 'false');
+      if (menuTriggerLabel) menuTriggerLabel.textContent = 'Menu';
+      releaseTrap(menuOverlay as HTMLElement);
+      setTimeout(() => {
+        if (menuOverlay) {
+          menuOverlay.dataset.state = 'closed';
+          menuOverlay.setAttribute('aria-hidden', 'true');
+        }
+        document.body.classList.remove('menu-open');
+        lenis.start();
+      }, 700);
+    };
+
+    if (menuTrigger) {
+      menuTrigger.addEventListener('click', () => {
+        const isOpen = menuTrigger.getAttribute('aria-expanded') === 'true';
+        isOpen ? closeMenu() : openMenu();
+      });
+    }
+
+    // Menu hover preview
+    document.querySelectorAll<HTMLElement>('[data-menu-link]').forEach((link) => {
+      link.addEventListener('mouseenter', () => {
+        const src = link.dataset.preview;
+        if (src && menuPreviewImg && menuPreview) {
+          menuPreviewImg.src = src;
+          menuPreview.classList.add('is-active');
+        }
+      });
+      link.addEventListener('mouseleave', () => {
+        menuPreview?.classList.remove('is-active');
+      });
+    });
+
+    // ESC closes menu
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuTrigger?.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+      }
+    });
+
+    // ─── CURTAIN PAGE TRANSITION (for menu/side-rail navigation) ──
+    const curtain = document.getElementById('curtain');
+
+    const curtainTransition = (target: HTMLElement) => {
+      if (!curtain) {
+        lenis.scrollTo(target, { offset: -40 });
+        return;
+      }
+      curtain.dataset.state = 'enter';
+      setTimeout(() => {
+        lenis.scrollTo(target, { offset: -40, immediate: true });
+        if (curtain) curtain.dataset.state = 'leave';
+        setTimeout(() => {
+          if (curtain) curtain.removeAttribute('data-state');
+        }, 1000);
+      }, 700);
+    };
+
+    // Apply curtain to menu links and side rail
+    document.querySelectorAll<HTMLAnchorElement>('[data-menu-link]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+        const target = document.querySelector(href) as HTMLElement | null;
+        if (!target) return;
+        e.preventDefault();
+        e.stopPropagation();
+        closeMenu();
+        setTimeout(() => curtainTransition(target), 400);
+      });
+    });
+
+    document.querySelectorAll<HTMLAnchorElement>('.side-rail-link').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+        const target = document.querySelector(href) as HTMLElement | null;
+        if (!target) return;
+        e.preventDefault();
+        e.stopPropagation();
+        curtainTransition(target);
+      });
+    });
+
+    // ─── SIDE RAIL: active state via scroll ──────────────────
+    const railLinks = document.querySelectorAll<HTMLAnchorElement>('.side-rail-link');
+    const sectionTargets = Array.from(railLinks)
+      .map((l) => ({ link: l, el: document.getElementById(l.dataset.section || '') }))
+      .filter((s) => s.el);
+
+    const updateRail = () => {
+      const y = window.scrollY + window.innerHeight * 0.35;
+      let active = sectionTargets[0];
+      for (const s of sectionTargets) {
+        if (s.el && s.el.offsetTop <= y) active = s;
+      }
+      railLinks.forEach((l) => l.classList.remove('is-active'));
+      active?.link.classList.add('is-active');
+    };
+    lenis.on('scroll', updateRail);
+    updateRail();
+
+    // ─── DARK THEME TRIGGER (Numeros section) ──────────────
+    const darkSections = document.querySelectorAll<HTMLElement>('[data-theme="dark"]');
+    darkSections.forEach((sec) => {
+      ScrollTrigger.create({
+        trigger: sec,
+        start: 'top top+=80',
+        end: 'bottom top+=80',
+        onEnter: () => document.body.classList.add('theme-dark'),
+        onLeave: () => document.body.classList.remove('theme-dark'),
+        onEnterBack: () => document.body.classList.add('theme-dark'),
+        onLeaveBack: () => document.body.classList.remove('theme-dark'),
+      });
+    });
+
+    // Limpar inline body styles que podem ter ficado de uma versão anterior
+    document.body.style.removeProperty('background-color');
+    document.body.style.removeProperty('color');
+
+    // ─── HORIZONTAL SCROLL PROJETOS ──────────────────────────
+    const track = document.getElementById('projetos-track');
+    const pin = document.getElementById('projetos-pin');
+    const fill = document.getElementById('progress-fill');
+    const currentEl = document.getElementById('progress-current');
+    const total = document.querySelectorAll('.projeto-panel').length;
+    const isDesktop = window.matchMedia('(min-width: 769px)').matches;
+
+    if (track && pin && isDesktop) {
+      const getDistance = () => track.scrollWidth - window.innerWidth + 80;
+
+      gsap.to(track, {
+        x: () => -getDistance(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: pin,
+          start: 'top top',
+          end: () => `+=${getDistance()}`,
+          pin: true,
+          pinSpacing: true,
+          scrub: 1.4,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+          fastScrollEnd: 800,
+          refreshPriority: -1,
+          onUpdate: (self) => {
+            if (fill) fill.style.transform = `scaleX(${self.progress})`;
+            if (currentEl) {
+              const idx = Math.min(total, Math.max(1, Math.ceil(self.progress * total) || 1));
+              currentEl.textContent = String(idx).padStart(2, '0');
+            }
+          },
+        },
+      });
+
+      window.addEventListener('resize', () => ScrollTrigger.refresh());
+    }
+
+    // ─── TOP PROGRESS BAR ──────────────────────────────────────
+    const progressLine = document.getElementById('progress-line');
+    if (progressLine) {
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const p = max > 0 ? window.scrollY / max : 0;
+        progressLine.style.transform = `scaleX(${p})`;
+      };
+      lenis.on('scroll', updateProgress);
+      updateProgress();
+    }
+
+    // ─── HERO BACKDROP HORIZONTAL PARALLAX ──────────────────
+    const heroBackdrop = document.getElementById('hero-backdrop-text');
+    const heroSection = document.querySelector('.hero') as HTMLElement | null;
+    if (heroBackdrop && heroSection) {
+      let lastY = 0;
+      lenis.on('scroll', ({ scroll }: { scroll: number }) => {
+        const heroH = heroSection.offsetHeight;
+        if (scroll > heroH * 1.5) return;
+        const tx = -scroll * 0.4;
+        const scale = 1 - Math.min(0.08, scroll / heroH * 0.08);
+        heroBackdrop.style.transform = `translateX(${tx}px) scale(${scale})`;
+      });
+    }
+
+    // ─── HERO BK SCROLL CHOREOGRAPHY ────────────────────────
+    const heroBkScroll = document.getElementById('hero-bk');
+    if (heroBkScroll && heroSection) {
+      lenis.on('scroll', ({ scroll }: { scroll: number }) => {
+        const heroH = heroSection.offsetHeight;
+        if (scroll > heroH) return;
+        const p = scroll / heroH;
+        const scale = 1 + p * 0.6;
+        const ty = -p * 80;
+        heroBkScroll.style.transform = `translate(0, ${ty}px) scale(${scale})`;
+      });
+    }
+
+    // ─── SPOTLIGHT (dark section) ────────────────────────────
+    document.querySelectorAll<HTMLElement>('.section--dark').forEach((sec) => {
+      sec.addEventListener('mousemove', (e) => {
+        const rect = sec.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        sec.style.setProperty('--mx', `${mx}px`);
+        sec.style.setProperty('--my', `${my}px`);
+      });
+    });
+
+    // ─── CURSOR TRAIL ────────────────────────────────────────
+    const trailEls = Array.from(document.querySelectorAll<HTMLElement>('.cursor-trail'));
+    const trails = trailEls.map((el) => ({ el, x: 0, y: 0 }));
+
+    const trailTick = () => {
+      if (!pageActive) {
+        requestAnimationFrame(trailTick);
+        return;
+      }
+      let px = mx, py = my;
+      trails.forEach((t, i) => {
+        const lerp = 0.32 - i * 0.035;
+        t.x += (px - t.x) * lerp;
+        t.y += (py - t.y) * lerp;
+        t.el.style.transform = `translate(${t.x}px, ${t.y}px)`;
+        px = t.x; py = t.y;
+      });
+      requestAnimationFrame(trailTick);
+    };
+    requestAnimationFrame(trailTick);
+
+    // ─── DRAG-TO-SCROLL nos projetos ─────────────────────────
+    const pinDrag = document.getElementById('projetos-pin');
+    if (pinDrag && isDesktop) {
+      let dragging = false;
+      let startX = 0;
+      let startScroll = 0;
+
+      pinDrag.addEventListener('pointerdown', (e) => {
+        if ((e.target as HTMLElement).closest('a, button')) return;
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        dragging = true;
+        startX = e.clientX;
+        startScroll = lenis.scroll;
+        pinDrag.classList.add('is-dragging');
+        pinDrag.setPointerCapture(e.pointerId);
+      });
+
+      window.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        const dx = e.clientX - startX;
+        lenis.scrollTo(startScroll - dx * 2.4, { immediate: true });
+      });
+
+      const pinEnd = () => {
+        if (dragging) {
+          dragging = false;
+          pinDrag.classList.remove('is-dragging');
+        }
+      };
+      window.addEventListener('pointerup', pinEnd);
+      window.addEventListener('pointercancel', pinEnd);
+      window.addEventListener('mouseleave', () => {
+        if (dragging) {
+          dragging = false;
+          pinDrag.classList.remove('is-dragging');
+        }
+      });
+    }
+
+    // ─── MENU TRIGGER LABEL: nome da seção atual ──────────────
+    const menuLabel = document.getElementById('menu-trigger-label');
+    const updateMenuLabel = () => {
+      if (!menuLabel || menuTrigger?.getAttribute('aria-expanded') === 'true') return;
+      const activeSection = sectionTargets.find(s => s.link.classList.contains('is-active'));
+      if (activeSection) {
+        const label = activeSection.link.querySelector('.side-rail-label')?.textContent?.trim().split(' ').slice(1).join(' ');
+        menuLabel.textContent = label ? `Menu · ${label}` : 'Menu';
+      } else {
+        menuLabel.textContent = 'Menu';
+      }
+    };
+    lenis.on('scroll', updateMenuLabel);
+
+    // ─── KEYBOARD SHORTCUTS ──────────────────────────────────
+    const helpOverlay = document.getElementById('help-overlay');
+    const toggleHelp = () => {
+      if (!helpOverlay) return;
+      const willOpen = !helpOverlay.classList.contains('is-open');
+      helpOverlay.classList.toggle('is-open');
+      helpOverlay.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+      if (willOpen) {
+        trapFocus(helpOverlay as HTMLElement);
+      } else {
+        releaseTrap(helpOverlay as HTMLElement);
+      }
+    };
+    const closeHelp = () => {
+      if (!helpOverlay || !helpOverlay.classList.contains('is-open')) return;
+      helpOverlay.classList.remove('is-open');
+      helpOverlay.setAttribute('aria-hidden', 'true');
+      releaseTrap(helpOverlay as HTMLElement);
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const tag = (document.activeElement?.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea') return;
+
+      switch (e.key.toLowerCase()) {
+        case 'm': {
+          e.preventDefault();
+          const isOpen = menuTrigger?.getAttribute('aria-expanded') === 'true';
+          isOpen ? closeMenu() : openMenu();
+          break;
+        }
+        case 'p': {
+          const el = document.getElementById('projetos');
+          if (el) curtainTransition(el);
+          break;
+        }
+        case 'c': {
+          const el = document.getElementById('contato');
+          if (el) curtainTransition(el);
+          break;
+        }
+        case 't': {
+          lenis.scrollTo(0);
+          break;
+        }
+        case '?':
+        case '/': {
+          e.preventDefault();
+          toggleHelp();
+          break;
+        }
+        case 'escape': {
+          closeHelp();
+          break;
+        }
+      }
+    });
+
+    helpOverlay?.addEventListener('click', (e) => {
+      if (e.target === helpOverlay) closeHelp();
+    });
+
+    // 3D BK MONOGRAM agora vive dentro do handler unificado de "HERO MOUSE PARALLAX" acima.
+
+    // ─── PHYSICS ZONE: visibility-based overlay fade ─────────
+    const physicsSec = document.getElementById('physics');
+    if (physicsSec) {
+      const physObs = new IntersectionObserver(
+        ([entry]) => physicsSec.classList.toggle('is-visible', entry.isIntersecting),
+        { threshold: 0.2 }
+      );
+      physObs.observe(physicsSec);
+    }
+
+    // ─── AUDIO (Web Audio API) ─────────────────────────────────
+    let audioCtx: AudioContext | null = null;
+    let masterGain: GainNode | null = null;
+    let ambientNodes: { stop: () => void } | null = null;
+    let audioOn = false;
+
+    const initAudio = () => {
+      const win = window as Window & { webkitAudioContext?: typeof AudioContext };
+      const Ctx = win.AudioContext || win.webkitAudioContext;
+      if (!Ctx) return;
+      audioCtx = new Ctx();
+      masterGain = audioCtx.createGain();
+      masterGain.gain.value = 0.45;
+      masterGain.connect(audioCtx.destination);
+    };
+
+    let panner: StereoPannerNode | null = null;
+
+    const startAmbient = () => {
+      if (!audioCtx || !masterGain) return;
+
+      // Stereo panner for spatial audio
+      panner = audioCtx.createStereoPanner();
+      panner.connect(masterGain);
+
+      // Feedback delay reverb
+      const delay = audioCtx.createDelay(2);
+      delay.delayTime.value = 0.45;
+      const feedback = audioCtx.createGain();
+      feedback.gain.value = 0.42;
+      const reverbFilter = audioCtx.createBiquadFilter();
+      reverbFilter.type = 'lowpass';
+      reverbFilter.frequency.value = 1400;
+      delay.connect(reverbFilter);
+      reverbFilter.connect(feedback);
+      feedback.connect(delay);
+      const wet = audioCtx.createGain();
+      wet.gain.value = 0.35;
+      delay.connect(wet);
+      wet.connect(panner);
+
+      // Chord progression: Am - F - C - G (in low octave)
+      const chords = [
+        [110, 130.81, 164.81],          // Am: A2, C3, E3
+        [87.31, 130.81, 174.61],        // F: F2, C3, F3
+        [130.81, 164.81, 196.00],       // C: C3, E3, G3
+        [98.00, 123.47, 146.83],        // G: G2, B2, D3
+      ];
+      const pentatonic = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
+
+      let chordIdx = 0;
+      let active: OscillatorNode[] = [];
+      let chordTimer: number;
+      let melodyTimer: number;
+
+      const playChord = () => {
+        if (!audioCtx || !panner) return;
+        const notes = chords[chordIdx];
+        const now = audioCtx.currentTime;
+        const dur = 9;
+
+        active.forEach(o => { try { o.stop(now + 1.5); } catch {} });
+        active = [];
+
+        notes.forEach((freq) => {
+          const osc = audioCtx!.createOscillator();
+          const oscGain = audioCtx!.createGain();
+          osc.type = 'sine';
+          osc.frequency.value = freq;
+          osc.detune.value = (Math.random() - 0.5) * 6;
+
+          oscGain.gain.setValueAtTime(0, now);
+          oscGain.gain.linearRampToValueAtTime(0.22 / notes.length, now + 2.5);
+          oscGain.gain.linearRampToValueAtTime(0.18 / notes.length, now + dur - 2);
+          oscGain.gain.linearRampToValueAtTime(0, now + dur);
+
+          osc.connect(oscGain);
+          oscGain.connect(panner!);
+          oscGain.connect(delay);
+
+          osc.start(now);
+          osc.stop(now + dur);
+          active.push(osc);
+        });
+
+        chordIdx = (chordIdx + 1) % chords.length;
+        chordTimer = window.setTimeout(playChord, (dur - 1.5) * 1000);
+      };
+
+      const playMelodyNote = () => {
+        if (!audioCtx || !panner) return;
+        if (Math.random() > 0.45) {
+          const freq = pentatonic[Math.floor(Math.random() * pentatonic.length)];
+          const now = audioCtx.currentTime;
+          const osc = audioCtx.createOscillator();
+          const mGain = audioCtx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.value = freq;
+          const dur = 1.5 + Math.random() * 2.5;
+          mGain.gain.setValueAtTime(0, now);
+          mGain.gain.linearRampToValueAtTime(0.10, now + 0.08);
+          mGain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+          osc.connect(mGain);
+          mGain.connect(panner);
+          mGain.connect(delay);
+          osc.start(now);
+          osc.stop(now + dur);
+        }
+        melodyTimer = window.setTimeout(playMelodyNote, 1800 + Math.random() * 3500);
+      };
+
+      playChord();
+      melodyTimer = window.setTimeout(playMelodyNote, 3000);
+
+      return {
+        stop: () => {
+          clearTimeout(chordTimer);
+          clearTimeout(melodyTimer);
+          const now = audioCtx!.currentTime;
+          active.forEach(o => { try { o.stop(now + 0.8); } catch {} });
+        },
+      };
+    };
+
+    // Spatial audio: mouse position controls pan
+    onMouseMove((e) => {
+      if (panner && audioOn) {
+        const x = (e.clientX / window.innerWidth) * 2 - 1;
+        panner.pan.setTargetAtTime(x * 0.7, audioCtx!.currentTime, 0.1);
+      }
+    });
+
+    const playTone = (freq: number, duration = 0.12, type: OscillatorType = 'sine') => {
+      if (!audioOn || !audioCtx || !masterGain) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.value = freq;
+      const now = audioCtx.currentTime;
+      gain.gain.setValueAtTime(0, now);
+      gain.gain.linearRampToValueAtTime(0.18, now + 0.005);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+      osc.connect(gain);
+      gain.connect(masterGain);
+      osc.start(now);
+      osc.stop(now + duration);
+    };
+
+    const audioBtn = document.getElementById('audio-toggle');
+    const audioIcon = document.getElementById('audio-icon');
+
+    audioBtn?.addEventListener('click', async () => {
+      if (!audioCtx) initAudio();
+      if (audioCtx?.state === 'suspended') await audioCtx.resume();
+      audioOn = !audioOn;
+      audioBtn.setAttribute('aria-pressed', String(audioOn));
+      if (audioOn) {
+        ambientNodes = startAmbient() || null;
+        playTone(880, 0.18);
+        if (audioIcon) audioIcon.style.color = 'var(--color-accent)';
+      } else {
+        ambientNodes?.stop();
+        ambientNodes = null;
+        playTone(440, 0.18);
+        if (audioIcon) audioIcon.style.color = '';
+      }
+    });
+
+    // Hover sons em links principais
+    const noteScale = [523.25, 587.33, 659.25, 698.46, 783.99, 880, 987.77];
+    let noteIdx = 0;
+    document.querySelectorAll('a.menu-item, a.projeto-panel-cta, a.btn-primary').forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        playTone(noteScale[noteIdx % noteScale.length], 0.08);
+        noteIdx++;
+      });
+    });
+
+    // ─── KONAMI CODE (party mode) ──────────────────────────────
+    const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIdx = 0;
+    const partyToast = document.getElementById('party-toast');
+
+    const activateParty = () => {
+      document.body.classList.add('party');
+      if (partyToast) {
+        partyToast.classList.add('is-visible');
+        setTimeout(() => partyToast.classList.remove('is-visible'), 3500);
+      }
+      // Cycle party hue continuously
+      let hue = 270;
+      const cycle = () => {
+        hue = (hue + 0.3) % 360;
+        document.documentElement.style.setProperty('--party-hue', String(hue));
+        if (document.body.classList.contains('party')) requestAnimationFrame(cycle);
+      };
+      requestAnimationFrame(cycle);
+    };
+
+    const deactivateParty = () => {
+      document.body.classList.remove('party');
+      document.documentElement.style.removeProperty('--party-hue');
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const expected = konami[konamiIdx];
+      if (e.key === expected || e.key.toLowerCase() === expected.toLowerCase()) {
+        konamiIdx++;
+        if (konamiIdx === konami.length) {
+          activateParty();
+          konamiIdx = 0;
+        }
+      } else {
+        konamiIdx = 0;
+      }
+      if (e.key.toLowerCase() === 'x' && document.body.classList.contains('party')) {
+        deactivateParty();
+      }
+    });
+
+    // ─── TEXT SCRAMBLE on hover ────────────────────────────────
+    const scrambleChars = '!<>-_\\/[]{}—=+*^?#________';
+
+    type ScrambleStep = { from: string; to: string; start: number; end: number; char: string };
+
+    class Scrambler {
+      el: HTMLElement;
+      original: string;
+      queue: ScrambleStep[] = [];
+      frame = 0;
+      frameRequest = 0;
+      running = false;
+
+      constructor(el: HTMLElement) {
+        this.el = el;
+        this.original = el.textContent || '';
+      }
+
+      run() {
+        if (this.running) return;
+        this.running = true;
+        const text = this.original;
+        const length = text.length;
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+          const from = text[i];
+          const to = text[i];
+          const start = Math.floor(Math.random() * 20);
+          const end = start + Math.floor(Math.random() * 20);
+          this.queue.push({ from, to, start, end, char: '' });
+        }
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0;
+        this.update();
+      }
+
+      update() {
+        let output = '';
+        let complete = 0;
+        for (let i = 0, n = this.queue.length; i < n; i++) {
+          let { from, to, start, end, char } = this.queue[i];
+          if (this.frame >= end) {
+            complete++;
+            output += to;
+          } else if (this.frame >= start) {
+            if (!char || Math.random() < 0.28) {
+              char = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
+              this.queue[i].char = char;
+            }
+            output += `<span class="scramble-dud">${char}</span>`;
+          } else {
+            output += from;
+          }
+        }
+        this.el.innerHTML = output;
+        if (complete === this.queue.length) {
+          this.running = false;
+          this.el.textContent = this.original;
+        } else {
+          this.frame++;
+          this.frameRequest = requestAnimationFrame(() => this.update());
+        }
+      }
+    }
+
+    document.querySelectorAll<HTMLElement>('[data-scramble]').forEach((el) => {
+      const s = new Scrambler(el);
+      el.addEventListener('mouseenter', () => s.run());
+    });
+
+    // ─── DRAGGABLE MARQUEE com fling iOS ───────────────────────
+    const setupDraggableMarquee = (marquee: HTMLElement, baseSpeed: number) => {
+      const track = marquee.querySelector<HTMLElement>('.marquee-track');
+      if (!track) return;
+      let x = 0;
+      let velocity = 0;
+      let dragging = false;
+      let startX = 0;
+      let startTrackX = 0;
+      let lastX = 0;
+      let lastTime = 0;
+      let trackHalfWidth = track.scrollWidth / 2;
+
+      const recalc = () => { trackHalfWidth = track.scrollWidth / 2; };
+      recalc();
+      window.addEventListener('resize', recalc);
+
+      const marqueeVisible = observeVisibility(marquee);
+      const tick = () => {
+        if (!pageActive || !marqueeVisible.current) {
+          requestAnimationFrame(tick);
+          return;
+        }
+        if (!dragging) {
+          x += baseSpeed + velocity;
+          velocity *= 0.93;
+          if (Math.abs(velocity) < 0.01) velocity = 0;
+        }
+        // Wrap
+        if (x <= -trackHalfWidth) x += trackHalfWidth;
+        if (x > 0) x -= trackHalfWidth;
+        track.style.transform = `translate3d(${x}px, 0, 0)`;
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+
+      marquee.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        dragging = true;
+        startX = e.clientX;
+        startTrackX = x;
+        lastX = e.clientX;
+        lastTime = performance.now();
+        velocity = 0;
+        marquee.classList.add('is-grabbing');
+        marquee.setPointerCapture(e.pointerId);
+      });
+
+      window.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        x = startTrackX + (e.clientX - startX);
+        const now = performance.now();
+        const dt = now - lastTime;
+        if (dt > 0) velocity = (e.clientX - lastX) / dt * 16;
+        lastX = e.clientX;
+        lastTime = now;
+      });
+
+      const mEnd = () => {
+        if (!dragging) return;
+        dragging = false;
+        marquee.classList.remove('is-grabbing');
+      };
+      window.addEventListener('pointerup', mEnd);
+      window.addEventListener('pointercancel', mEnd);
+    };
+
+    document.querySelectorAll<HTMLElement>('.marquee').forEach((m, i) => {
+      setupDraggableMarquee(m, i === 0 ? -1.4 : -1.0);
+    });
+
+    // ─── HERO BACKDROP DRAGGABLE ───────────────────────────────
+    const heroBackdropEl = document.getElementById('hero-backdrop');
+    const heroBackdropText = document.getElementById('hero-backdrop-text');
+    if (heroBackdropEl && heroBackdropText && isDesktop) {
+      let bx = 0;
+      let bvel = 0;
+      let bdragging = false;
+      let bstartX = 0;
+      let bstartBx = 0;
+      let blastX = 0;
+      let blastTime = 0;
+
+      const heroBackdropVisible = observeVisibility(heroBackdropEl);
+      const btick = () => {
+        if (!pageActive || !heroBackdropVisible.current) {
+          requestAnimationFrame(btick);
+          return;
+        }
+        if (!bdragging) {
+          bx += bvel;
+          bvel *= 0.92;
+          if (Math.abs(bvel) < 0.05) bvel = 0;
+        }
+        heroBackdropText.style.transform = `translate3d(${bx}px, 0, 0)`;
+        requestAnimationFrame(btick);
+      };
+      requestAnimationFrame(btick);
+
+      heroBackdropEl.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        bdragging = true;
+        bstartX = e.clientX;
+        bstartBx = bx;
+        blastX = e.clientX;
+        blastTime = performance.now();
+        heroBackdropEl.classList.add('is-grabbing');
+        heroBackdropEl.setPointerCapture(e.pointerId);
+      });
+
+      window.addEventListener('pointermove', (e) => {
+        if (!bdragging) return;
+        bx = bstartBx + (e.clientX - bstartX) * 1.4;
+        const now = performance.now();
+        const dt = now - blastTime;
+        if (dt > 0) bvel = (e.clientX - blastX) / dt * 22;
+        blastX = e.clientX;
+        blastTime = now;
+      });
+
+      const bEnd = () => {
+        if (!bdragging) return;
+        bdragging = false;
+        heroBackdropEl.classList.remove('is-grabbing');
+      };
+      window.addEventListener('pointerup', bEnd);
+      window.addEventListener('pointercancel', bEnd);
+    }
+
+    // ─── CURTAIN LOADING STATE ─────────────────────────────────
+    const curtainEyebrow = document.getElementById('curtain-label-eyebrow');
+    const curtainTarget = document.getElementById('curtain-label-target');
+
+    const updateCurtainLabel = (targetEl: HTMLElement) => {
+      const map: Record<string, string> = {
+        sobre: 'Sobre',
+        servicos: 'Disciplinas',
+        projetos: 'Projetos',
+        numeros: 'Em números',
+        contato: 'Contato',
+      };
+      const id = targetEl.id;
+      if (curtainTarget) curtainTarget.textContent = map[id] || targetEl.getAttribute('aria-label') || '—';
+      if (curtainEyebrow) curtainEyebrow.textContent = 'Navegando para';
+    };
+
+    // Captura clicks de menu/rail antes da navegação para atualizar o label do curtain.
+    const wrapClickWithLabel = (selector: string) => {
+      document.querySelectorAll<HTMLAnchorElement>(selector).forEach((link) => {
+        link.addEventListener('click', () => {
+          const href = link.getAttribute('href');
+          if (!href || !href.startsWith('#')) return;
+          const target = document.querySelector(href) as HTMLElement | null;
+          if (target) updateCurtainLabel(target);
+        }, true); // capture phase to fire first
+      });
+    };
+    wrapClickWithLabel('[data-menu-link]');
+    wrapClickWithLabel('.side-rail-link');
+
+    // ─── REAL-TIME SP CLOCK ────────────────────────────────────
+    const clockEl = document.getElementById('clock-time');
+    const updateClock = () => {
+      if (!clockEl) return;
+      const fmt = new Intl.DateTimeFormat('pt-BR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZone: 'America/Sao_Paulo',
+        hour12: false,
+      });
+      clockEl.textContent = `${fmt.format(new Date())} SP`;
+    };
+    updateClock();
+    setInterval(updateClock, 30000);
+
+    // ─── TIME-BASED HUE shift (subtle) ─────────────────────────
+    const applyTimeHue = () => {
+      const hour = new Date().getHours();
+      let baseHue = 252; // default purple
+      if (hour >= 6 && hour < 10) baseHue = 268;  // morning warmer
+      else if (hour >= 10 && hour < 17) baseHue = 252; // day neutral
+      else if (hour >= 17 && hour < 20) baseHue = 280; // dusk warmer
+      else baseHue = 240; // night cooler
+      document.documentElement.style.setProperty('--time-hue', String(baseHue));
+    };
+    applyTimeHue();
+
+    // ─── COMMAND PALETTE (CMD+K / Ctrl+K) ──────────────────────
+    const palette = document.getElementById('palette');
+    const paletteInput = document.getElementById('palette-input') as HTMLInputElement | null;
+    const paletteList = document.getElementById('palette-list');
+    const paletteBackdrop = document.getElementById('palette-backdrop');
+
+    type PItem = { kind: string; label: string; href: string; meta?: string };
+    const paletteItems: PItem[] = [
+      { kind: 'Seção', label: 'Sobre', href: '#sobre', meta: '01' },
+      { kind: 'Seção', label: 'O que faço', href: '#servicos', meta: '02' },
+      { kind: 'Seção', label: 'Projetos', href: '#projetos', meta: '03' },
+      { kind: 'Seção', label: 'Em números', href: '#numeros', meta: '04' },
+      { kind: 'Seção', label: 'Contato', href: '#contato', meta: '05' },
+      { kind: 'Projeto', label: 'Plataforma EAD UMAPAZ', href: '/projetos/plataforma-ead-umapaz', meta: '01' },
+      { kind: 'Projeto', label: 'Plano de Comunicação UMAPAZ', href: '/projetos/plano-de-comunicacao-umapaz', meta: '02' },
+      { kind: 'Projeto', label: 'Instagram UMAPAZ', href: '/projetos/instagram-umapaz', meta: '03' },
+      { kind: 'Projeto', label: 'Motion Design e Vídeo', href: '/projetos/motion-design', meta: '04' },
+      { kind: 'Projeto', label: 'Automação de Comunicação', href: '/projetos/automacao-comunicacao', meta: '05' },
+      { kind: 'Ação', label: 'Baixar currículo', href: '/assets/Bruno_Kohn_CV.pdf', meta: 'PDF' },
+      { kind: 'Ação', label: 'Enviar e-mail', href: 'mailto:brunokohn.contact@gmail.com', meta: '@' },
+      { kind: 'Ação', label: 'Abrir WhatsApp', href: 'https://wa.me/5511991767271', meta: 'WPP' },
+      { kind: 'Ação', label: 'Ver Behance', href: 'https://www.behance.net/brunorossiea6a', meta: 'BE' },
+      { kind: 'Atalho', label: 'Mostrar atalhos do teclado', href: '__help', meta: '?' },
+      { kind: 'Atalho', label: 'Voltar ao topo', href: '__top', meta: 'T' },
+    ];
+
+    let paletteActive = 0;
+    let paletteFiltered = paletteItems.slice();
+
+    const renderPalette = () => {
+      if (!paletteList) return;
+      const query = (paletteInput?.value || '').toLowerCase().trim();
+      paletteFiltered = query
+        ? paletteItems.filter(it => it.label.toLowerCase().includes(query) || it.kind.toLowerCase().includes(query))
+        : paletteItems;
+
+      if (paletteFiltered.length === 0) {
+        paletteList.innerHTML = `<li class="palette-empty">Nada encontrado para "${query}"</li>`;
+        return;
+      }
+
+      let html = '';
+      let lastKind = '';
+      paletteFiltered.forEach((it, i) => {
+        if (it.kind !== lastKind) {
+          html += `<li class="palette-section">${it.kind}</li>`;
+          lastKind = it.kind;
+        }
+        html += `<li class="palette-item ${i === paletteActive ? 'is-active' : ''}" data-idx="${i}">
+          <span class="palette-item-icon">${it.meta || '·'}</span>
+          <span class="palette-item-label">${it.label}</span>
+          <span class="palette-item-meta">${it.kind}</span>
+        </li>`;
+      });
+      paletteList.innerHTML = html;
+
+      paletteList.querySelectorAll<HTMLElement>('.palette-item').forEach((el) => {
+        el.addEventListener('mousemove', () => {
+          paletteActive = parseInt(el.dataset.idx || '0', 10);
+          paletteList.querySelectorAll('.palette-item').forEach(e => e.classList.remove('is-active'));
+          el.classList.add('is-active');
+        });
+        el.addEventListener('click', () => runPaletteAction());
+      });
+    };
+
+    const openPalette = () => {
+      if (!palette) return;
+      palette.dataset.state = 'open';
+      palette.setAttribute('aria-hidden', 'false');
+      paletteActive = 0;
+      if (paletteInput) {
+        paletteInput.value = '';
+      }
+      lenis.stop();
+      renderPalette();
+      trapFocus(palette as HTMLElement);
+      requestAnimationFrame(() => paletteInput?.focus());
+    };
+
+    const closePalette = () => {
+      if (!palette) return;
+      palette.dataset.state = 'closed';
+      palette.setAttribute('aria-hidden', 'true');
+      releaseTrap(palette as HTMLElement);
+      lenis.start();
+    };
+
+    const runPaletteAction = () => {
+      const it = paletteFiltered[paletteActive];
+      if (!it) return;
+      closePalette();
+      if (it.href === '__help') {
+        setTimeout(() => toggleHelp(), 250);
+      } else if (it.href === '__top') {
+        setTimeout(() => lenis.scrollTo(0), 250);
+      } else if (it.href.startsWith('#')) {
+        const target = document.querySelector(it.href) as HTMLElement | null;
+        if (target) setTimeout(() => curtainTransition(target), 250);
+      } else {
+        window.open(it.href, it.href.startsWith('http') || it.href.startsWith('mailto') ? '_blank' : '_self');
+      }
+    };
+
+    paletteInput?.addEventListener('input', () => {
+      paletteActive = 0;
+      renderPalette();
+    });
+
+    paletteBackdrop?.addEventListener('click', closePalette);
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        palette?.dataset.state === 'open' ? closePalette() : openPalette();
+        return;
+      }
+      if (palette?.dataset.state !== 'open') return;
+
+      if (e.key === 'Escape') { e.preventDefault(); closePalette(); }
+      else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        paletteActive = Math.min(paletteFiltered.length - 1, paletteActive + 1);
+        renderPalette();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        paletteActive = Math.max(0, paletteActive - 1);
+        renderPalette();
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        runPaletteAction();
+      }
+    });
+
+    // ─── NUMEROS: card progress + in-numeros flag (sem interpolacao inline) ──
+    const numerosSection = document.getElementById('numeros');
+    if (numerosSection) {
+      ScrollTrigger.create({
+        trigger: numerosSection,
+        start: 'top top',
+        end: 'bottom bottom',
+        onUpdate: (self) => {
+          const cards = numerosSection.querySelectorAll('.numero-card');
+          const idx = Math.min(cards.length - 1, Math.floor(self.progress * cards.length));
+          cards.forEach((c, i) => {
+            const dots = c.querySelectorAll('.numero-progress-dot');
+            dots.forEach((d, j) => d.classList.toggle('active', j === idx));
+          });
+        },
+        onEnter: () => document.body.classList.add('in-numeros'),
+        onLeave: () => document.body.classList.remove('in-numeros'),
+        onEnterBack: () => document.body.classList.add('in-numeros'),
+        onLeaveBack: () => document.body.classList.remove('in-numeros'),
+      });
+    }
+
+    // ─── CURSOR SCRUB TIMELINE ─────────────────────────────────
+    const timelineWrap = document.getElementById('timeline-track-wrap');
+    const timelineHandle = document.getElementById('timeline-handle');
+    const timelineProgress = document.getElementById('timeline-progress');
+    const timelineCards = document.querySelectorAll<HTMLElement>('#timeline-content .timeline-card');
+
+    if (timelineWrap && timelineHandle && timelineProgress) {
+      const setProgress = (p: number) => {
+        const clamped = Math.max(0, Math.min(1, p));
+        timelineHandle.style.left = `${clamped * 100}%`;
+        timelineProgress.style.transform = `scaleX(${clamped})`;
+        const idx = Math.min(timelineCards.length - 1, Math.floor(clamped * timelineCards.length));
+        timelineCards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+      };
+
+      setProgress(0);
+
+      let dragT = false;
+      const updateFromEvent = (clientX: number) => {
+        const rect = timelineWrap.getBoundingClientRect();
+        const p = (clientX - rect.left) / rect.width;
+        setProgress(p);
+      };
+
+      timelineWrap.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        dragT = true;
+        timelineWrap.classList.add('is-grabbing');
+        timelineWrap.setPointerCapture(e.pointerId);
+        updateFromEvent(e.clientX);
+      });
+      window.addEventListener('pointermove', (e) => {
+        if (dragT) updateFromEvent(e.clientX);
+      });
+      const tEnd = () => {
+        dragT = false;
+        timelineWrap.classList.remove('is-grabbing');
+      };
+      window.addEventListener('pointerup', tEnd);
+      window.addEventListener('pointercancel', tEnd);
+
+      // Auto-cycle when not hovered (pausa em background pra economizar bateria)
+      let autoIdx = 0;
+      setInterval(() => {
+        if (!pageActive || dragT) return;
+        if (timelineWrap.matches(':hover')) return;
+        autoIdx = (autoIdx + 1) % timelineCards.length;
+        setProgress(autoIdx / (timelineCards.length - 1));
+      }, 4000);
+    }
+
+    // ─── GENERATIVE SVG (cursor draws lines) ──────────────────
+    const genSvg = document.getElementById('gen-svg');
+    if (genSvg) {
+      genSvg.setAttribute('viewBox', `0 0 ${window.innerWidth} ${window.innerHeight}`);
+      window.addEventListener('resize', () => {
+        genSvg.setAttribute('viewBox', `0 0 ${window.innerWidth} ${window.innerHeight}`);
+      });
+
+      const points: { x: number; y: number; t: number }[] = [];
+      const maxPoints = 30;
+
+      onMouseMove((e) => {
+        points.push({ x: e.clientX, y: e.clientY, t: performance.now() });
+        if (points.length > maxPoints) points.shift();
+      });
+
+      const genTick = () => {
+        const now = performance.now();
+        let path = '';
+        let lastPt: typeof points[0] | null = null;
+        points.forEach((p) => {
+          if (now - p.t > 1500) return;
+          if (!lastPt) {
+            path += `M ${p.x} ${p.y}`;
+          } else {
+            const dx = p.x - lastPt.x;
+            const dy = p.y - lastPt.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist > 3 && dist < 80) {
+              path += ` L ${p.x} ${p.y}`;
+            } else {
+              path += ` M ${p.x} ${p.y}`;
+            }
+          }
+          lastPt = p;
+        });
+        if (pageActive) {
+          genSvg.innerHTML = path
+            ? `<path d="${path}" fill="none" stroke="var(--color-accent)" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />`
+            : '';
+        }
+        requestAnimationFrame(genTick);
+      };
+      requestAnimationFrame(genTick);
+    }
+
+    // ─── MOUSE HEATMAP CANVAS ──────────────────────────────────
+    const heatmapCanvas = document.getElementById('heatmap-canvas') as HTMLCanvasElement | null;
+    if (heatmapCanvas) {
+      const hctx = heatmapCanvas.getContext('2d');
+      const resizeHeat = () => {
+        heatmapCanvas.width = window.innerWidth * (window.devicePixelRatio || 1);
+        heatmapCanvas.height = window.innerHeight * (window.devicePixelRatio || 1);
+        heatmapCanvas.style.width = window.innerWidth + 'px';
+        heatmapCanvas.style.height = window.innerHeight + 'px';
+      };
+      resizeHeat();
+      window.addEventListener('resize', resizeHeat);
+
+      const dpr = window.devicePixelRatio || 1;
+
+      onMouseMove((e) => {
+        if (!hctx || !document.body.classList.contains('heatmap-on')) return;
+        hctx.globalCompositeOperation = 'source-over';
+        const grad = hctx.createRadialGradient(e.clientX * dpr, e.clientY * dpr, 0, e.clientX * dpr, e.clientY * dpr, 30 * dpr);
+        grad.addColorStop(0, 'rgba(93, 79, 168, 0.25)');
+        grad.addColorStop(1, 'rgba(93, 79, 168, 0)');
+        hctx.fillStyle = grad;
+        hctx.beginPath();
+        hctx.arc(e.clientX * dpr, e.clientY * dpr, 30 * dpr, 0, Math.PI * 2);
+        hctx.fill();
+      });
+
+      // Fade old trail
+      const fadeTick = () => {
+        if (pageActive && hctx && document.body.classList.contains('heatmap-on')) {
+          hctx.globalCompositeOperation = 'destination-out';
+          hctx.fillStyle = 'rgba(0, 0, 0, 0.015)';
+          hctx.fillRect(0, 0, heatmapCanvas.width, heatmapCanvas.height);
+        }
+        requestAnimationFrame(fadeTick);
+      };
+      requestAnimationFrame(fadeTick);
+    }
+
+    // ─── ANIMATED FAVICON ──────────────────────────────────────
+    const faviconLink = document.querySelector("link[rel='icon']") as HTMLLinkElement | null;
+    const faviconMap: Record<string, string> = {
+      sobre: '01',
+      servicos: '02',
+      projetos: '03',
+      numeros: '04',
+      contato: '05',
+    };
+    let lastFaviconKey = '';
+
+    const drawFavicon = (text: string, bg = '#5D4FA8', fg = '#FFFFFF') => {
+      const c = document.createElement('canvas');
+      c.width = 64; c.height = 64;
+      const ctx2 = c.getContext('2d');
+      if (!ctx2 || !faviconLink) return;
+      ctx2.fillStyle = bg;
+      ctx2.beginPath();
+      ctx2.arc(32, 32, 30, 0, Math.PI * 2);
+      ctx2.fill();
+      ctx2.fillStyle = fg;
+      ctx2.font = '600 30px "DM Sans", system-ui, sans-serif';
+      ctx2.textAlign = 'center';
+      ctx2.textBaseline = 'middle';
+      ctx2.fillText(text, 32, 36);
+      faviconLink.href = c.toDataURL('image/png');
+    };
+
+    const updateFavicon = () => {
+      const active = sectionTargets.find(s => s.link.classList.contains('is-active'));
+      const key = active?.el?.id || '';
+      if (key === lastFaviconKey) return;
+      lastFaviconKey = key;
+      const text = faviconMap[key] || 'BK';
+      drawFavicon(text);
+    };
+    drawFavicon('BK');
+    lenis.on('scroll', updateFavicon);
+
+    // ─── 3D TAG CLOUD: spin + mouse parallax + counter-rotation per tag ─
+    const tagCloud = document.getElementById('tag-cloud');
+    const tagCloudWrap = document.getElementById('tag-cloud-wrap');
+    if (tagCloud && tagCloudWrap && isDesktop) {
+      const tagItems = Array.from(tagCloud.querySelectorAll<HTMLElement>('.tag-cloud-item'));
+      const tagPositions = tagItems.map((tag) => {
+        const m = tag.style.transform.match(/translate3d\(([^,]+)px,\s*([^,]+)px,\s*([^)]+)px\)/);
+        return m
+          ? { x: parseFloat(m[1]), y: parseFloat(m[2]), z: parseFloat(m[3]) }
+          : { x: 0, y: 0, z: 0 };
+      });
+
+      let rotY = 0, rotX = 8;
+      let baseRotY = 0;
+      let mouseDx = 0, mouseDy = 0;
+      const autoSpinSpeed = 0.18;
+
+      onMouseMove((e) => {
+        const rect = tagCloudWrap.getBoundingClientRect();
+        if (rect.top > window.innerHeight || rect.bottom < 0) return;
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        mouseDx = (e.clientX - cx) / window.innerWidth;
+        mouseDy = (e.clientY - cy) / window.innerHeight;
+      });
+
+      const cloudVisible = observeVisibility(tagCloudWrap);
+      const cloudTick = () => {
+        if (!pageActive || !cloudVisible.current) {
+          requestAnimationFrame(cloudTick);
+          return;
+        }
+        baseRotY += autoSpinSpeed;
+        const targetRotY = baseRotY + mouseDx * 50;
+        const targetRotX = 8 - mouseDy * 25;
+        rotY += (targetRotY - rotY) * 0.08;
+        rotX += (targetRotX - rotX) * 0.06;
+
+        tagCloud.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg)`;
+
+        // Counter-rotate each tag to face camera (billboard effect)
+        tagItems.forEach((tag, i) => {
+          const t = tagPositions[i];
+          tag.style.transform = `translate3d(${t.x}px, ${t.y}px, ${t.z}px) rotateY(${-rotY}deg) rotateX(${-rotX}deg)`;
+        });
+        requestAnimationFrame(cloudTick);
+      };
+      requestAnimationFrame(cloudTick);
+    }
+
+    // ─── EASTER EGGS EXPANDIDOS ───────────────────────────────
+    const keyBuffer: string[] = [];
+    const easterCodes: Record<string, () => void> = {
+      'bk': () => {
+        document.body.classList.add('bk-takeover');
+        setTimeout(() => document.body.classList.remove('bk-takeover'), 2100);
+      },
+      'zen': () => {
+        document.body.classList.toggle('zen');
+      },
+      'dark': () => {
+        document.body.classList.toggle('theme-dark');
+      },
+      'heat': () => {
+        document.body.classList.toggle('heatmap-on');
+      },
+    };
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.target as HTMLElement).tagName === 'INPUT') return;
+      if (e.key.length !== 1) return;
+      keyBuffer.push(e.key.toLowerCase());
+      if (keyBuffer.length > 6) keyBuffer.shift();
+      const seq = keyBuffer.join('');
+      for (const code in easterCodes) {
+        if (seq.endsWith(code)) {
+          easterCodes[code]();
+          keyBuffer.length = 0;
+          break;
+        }
+      }
+    });
+
+    // ─── WEBGL SHADER BACKGROUND (dark numeros section) ────────
+    (async () => {
+      const noiseCanvas = document.getElementById('numeros-noise') as HTMLCanvasElement | null;
+      if (!noiseCanvas) return;
+      const THREE = await import('three');
+
+      const noiseRenderer = new THREE.WebGLRenderer({ canvas: noiseCanvas, alpha: true, antialias: false });
+      noiseRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      const noiseScene = new THREE.Scene();
+      const noiseCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+
+      const noiseShader = new THREE.ShaderMaterial({
+        uniforms: {
+          uTime: { value: 0 },
+          uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+          uRes: { value: new THREE.Vector2(1, 1) },
+          uAccent: { value: new THREE.Color('#5D4FA8') },
+        },
+        vertexShader: `
+          varying vec2 vUv;
+          void main() {
+            vUv = uv;
+            gl_Position = vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uMouse;
+          uniform vec2 uRes;
+          uniform vec3 uAccent;
+
+          // 2D simplex-like noise
+          vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+          vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+          vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+          float snoise(vec2 v) {
+            const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
+            vec2 i  = floor(v + dot(v, C.yy));
+            vec2 x0 = v - i + dot(i, C.xx);
+            vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+            vec4 x12 = x0.xyxy + C.xxzz;
+            x12.xy -= i1;
+            i = mod289(i);
+            vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
+            vec3 m = max(0.5 - vec3(dot(x0, x0), dot(x12.xy, x12.xy), dot(x12.zw, x12.zw)), 0.0);
+            m = m*m; m = m*m;
+            vec3 x = 2.0 * fract(p * C.www) - 1.0;
+            vec3 h = abs(x) - 0.5;
+            vec3 ox = floor(x + 0.5);
+            vec3 a0 = x - ox;
+            m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+            vec3 g;
+            g.x = a0.x * x0.x + h.x * x0.y;
+            g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+            return 130.0 * dot(m, g);
+          }
+
+          void main() {
+            vec2 uv = vUv;
+            vec2 aspect = vec2(uRes.x / uRes.y, 1.0);
+            vec2 p = uv * aspect;
+
+            float n1 = snoise(p * 2.0 + uTime * 0.05);
+            float n2 = snoise(p * 4.0 - uTime * 0.07);
+            float n3 = snoise(p * 8.0 + uTime * 0.03);
+            float n = n1 * 0.5 + n2 * 0.3 + n3 * 0.2;
+
+            float dist = distance(uv, uMouse);
+            float spot = smoothstep(0.4, 0.0, dist) * 0.4;
+
+            vec3 col = mix(vec3(0.04, 0.04, 0.06), uAccent * 0.5, smoothstep(-0.3, 0.6, n) + spot);
+            float alpha = 0.35 + spot * 0.4;
+            gl_FragColor = vec4(col, alpha);
+          }
+        `,
+        transparent: true,
+      });
+
+      const plane = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), noiseShader);
+      noiseScene.add(plane);
+
+      const resizeNoise = () => {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        noiseRenderer.setSize(w, h, false);
+        noiseShader.uniforms.uRes.value.set(w, h);
+      };
+      resizeNoise();
+      window.addEventListener('resize', resizeNoise);
+
+      onMouseMove((e) => {
+        noiseShader.uniforms.uMouse.value.set(e.clientX / window.innerWidth, 1 - e.clientY / window.innerHeight);
+      });
+
+      const noiseStart = performance.now();
+      const noiseLoop = () => {
+        if (pageActive && document.body.classList.contains('in-numeros')) {
+          noiseShader.uniforms.uTime.value = (performance.now() - noiseStart) / 1000;
+          noiseRenderer.render(noiseScene, noiseCam);
+        }
+        requestAnimationFrame(noiseLoop);
+      };
+      requestAnimationFrame(noiseLoop);
+    })();
+
+    // ─── 3D BOOK MOCKUP (project 02) ──────────────────────────
+    (async () => {
+      const bookHosts = document.querySelectorAll<HTMLElement>('[data-book]');
+      if (bookHosts.length === 0) return;
+      const THREE = await import('three');
+
+      bookHosts.forEach((host) => {
+        const imgSrc = host.dataset.book;
+        if (!imgSrc) return;
+        const img = host.querySelector('img');
+        if (!img) return;
+
+        // Replace image with canvas mount
+        const wrap = document.createElement('div');
+        wrap.className = 'book-canvas-wrap';
+        const canvas = document.createElement('canvas');
+        canvas.className = 'book-canvas';
+        wrap.appendChild(canvas);
+        host.appendChild(wrap);
+        img.style.display = 'none';
+
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+        camera.position.z = 5.5;
+
+        const light = new THREE.DirectionalLight(0xffffff, 1.2);
+        light.position.set(2, 3, 4);
+        scene.add(light);
+        scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+
+        const bookW = 2.2;
+        const bookH = 3;
+        const bookD = 0.45;
+        const faceAspect = bookW / bookH;
+
+        const loader = new THREE.TextureLoader();
+        const cover = loader.load(imgSrc, (tex) => {
+          const img = tex.image as HTMLImageElement;
+          const imgAspect = img.width / img.height;
+          // Crop to fit (CSS object-fit: cover behavior)
+          if (imgAspect > faceAspect) {
+            tex.repeat.x = faceAspect / imgAspect;
+            tex.offset.x = (1 - tex.repeat.x) / 2;
+          } else {
+            tex.repeat.y = imgAspect / faceAspect;
+            tex.offset.y = (1 - tex.repeat.y) / 2;
+          }
+          tex.needsUpdate = true;
+          renderer.render(scene, camera);
+        });
+        cover.colorSpace = THREE.SRGBColorSpace;
+
+        const bookGeo = new THREE.BoxGeometry(bookW, bookH, bookD);
+        const sideMat = new THREE.MeshStandardMaterial({ color: 0xf5f3ef, roughness: 0.85 });
+        const spineMat = new THREE.MeshStandardMaterial({ color: 0x2a2a2c, roughness: 0.7 });
+        const coverMat = new THREE.MeshStandardMaterial({ map: cover, roughness: 0.55 });
+        const backMat = new THREE.MeshStandardMaterial({ color: 0xeeeae3, roughness: 0.85 });
+
+        // box face order: [+x, -x, +y, -y, +z, -z]
+        const book = new THREE.Mesh(bookGeo, [spineMat, sideMat, sideMat, sideMat, coverMat, backMat]);
+        book.rotation.y = -0.4;
+        book.rotation.x = 0.1;
+        scene.add(book);
+
+        let targetY = -0.4, targetX = 0.1;
+        let curY = -0.4, curX = 0.1;
+        let dragging = false;
+        let lastMX = 0, lastMY = 0;
+
+        const resize = () => {
+          const w = host.offsetWidth;
+          const h = host.offsetHeight;
+          renderer.setSize(w, h, false);
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+        };
+        resize();
+        const ro = new ResizeObserver(resize);
+        ro.observe(host);
+
+        host.addEventListener('mousemove', (e) => {
+          if (dragging) return;
+          const rect = host.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          targetY = -0.4 + x * 1.6;
+          targetX = 0.1 + y * -0.8;
+        });
+
+        host.addEventListener('pointerdown', (e) => {
+          if (e.pointerType === 'mouse' && e.button !== 0) return;
+          dragging = true;
+          lastMX = e.clientX; lastMY = e.clientY;
+          wrap.classList.add('is-grabbing');
+          host.setPointerCapture(e.pointerId);
+        });
+        window.addEventListener('pointermove', (e) => {
+          if (!dragging) return;
+          const dx = e.clientX - lastMX;
+          const dy = e.clientY - lastMY;
+          targetY += dx * 0.01;
+          targetX -= dy * 0.01;
+          lastMX = e.clientX; lastMY = e.clientY;
+        });
+        const bookEnd = () => {
+          dragging = false;
+          wrap.classList.remove('is-grabbing');
+        };
+        window.addEventListener('pointerup', bookEnd);
+        window.addEventListener('pointercancel', bookEnd);
+
+        const bookVisible = observeVisibility(host);
+        const loop = () => {
+          if (!pageActive || !bookVisible.current) {
+            requestAnimationFrame(loop);
+            return;
+          }
+          curY += (targetY - curY) * 0.08;
+          curX += (targetX - curX) * 0.08;
+          book.rotation.y = curY;
+          book.rotation.x = curX;
+          renderer.render(scene, camera);
+          requestAnimationFrame(loop);
+        };
+        loop();
+      });
+    })();
+
+    // ─── CURSOR PET (creature com personalidade) ─────────────
+    const cursorPet = document.getElementById('cursor-pet');
+    const petBubble = document.getElementById('cursor-pet-bubble');
+    const petPupils = cursorPet?.querySelectorAll<HTMLElement>('.cursor-pet-pupil');
+
+    if (cursorPet && isDesktop) {
+      let petX = 0, petY = 0;
+      let petTargetX = window.innerWidth / 2, petTargetY = window.innerHeight / 2;
+      let lastMoveTime = performance.now();
+      let lastMouseX = 0, lastMouseY = 0;
+      let petState: 'follow' | 'idle' | 'sleepy' | 'excited' | 'surprised' | 'hidden' = 'follow';
+      let nextBubbleAt = performance.now() + 7000 + Math.random() * 8000;
+
+      const phrases = ['oi', '✦', 'hmm', '👀', 'olá', 'oi!', '✺', '◡'];
+      const phrasesIdle = ['zzz', '...', '◠ ◠'];
+      const phrasesExcited = ['!', '✨', 'oo!', '◉‿◉'];
+
+      const showBubble = (msg: string, duration = 1800) => {
+        if (!petBubble) return;
+        petBubble.textContent = msg;
+        petBubble.classList.add('is-visible');
+        setTimeout(() => petBubble.classList.remove('is-visible'), duration);
+      };
+
+      const setState = (s: typeof petState) => {
+        if (petState !== s) {
+          const prev = petState;
+          petState = s;
+          cursorPet.dataset.state = s;
+          // Speech bubble on state transition
+          if (s === 'sleepy' && prev !== 'sleepy') {
+            showBubble(phrasesIdle[Math.floor(Math.random() * phrasesIdle.length)], 2500);
+          }
+          if (s === 'excited' && prev !== 'excited') {
+            if (Math.random() < 0.3) showBubble(phrasesExcited[Math.floor(Math.random() * phrasesExcited.length)], 1200);
+          }
+        }
+      };
+
+      onMouseMove((e) => {
+        petTargetX = e.clientX - 55;
+        petTargetY = e.clientY + 55;
+        lastMouseX = e.clientX;
+        lastMouseY = e.clientY;
+        lastMoveTime = performance.now();
+      });
+
+      const petTick = () => {
+        if (!pageActive) {
+          requestAnimationFrame(petTick);
+          return;
+        }
+        petX += (petTargetX - petX) * 0.06;
+        petY += (petTargetY - petY) * 0.06;
+        cursorPet.style.transform = `translate(${petX}px, ${petY}px)`;
+        cursorPet.style.setProperty('--px', `${petX}px`);
+        cursorPet.style.setProperty('--py', `${petY}px`);
+
+        // Pupils track the cursor
+        if (petPupils && petPupils.length === 2 && petState !== 'sleepy') {
+          const petRect = cursorPet.getBoundingClientRect();
+          const petCx = petRect.left + petRect.width / 2;
+          const petCy = petRect.top + petRect.height / 2;
+          const angle = Math.atan2(lastMouseY - petCy, lastMouseX - petCx);
+          const dist = Math.min(2.2, Math.hypot(lastMouseX - petCx, lastMouseY - petCy) / 25);
+          const dx = Math.cos(angle) * dist;
+          const dy = Math.sin(angle) * dist;
+          petPupils.forEach(p => { p.style.transform = `translate(${dx}px, ${dy}px)`; });
+        }
+
+        // State machine
+        const idleTime = performance.now() - lastMoveTime;
+        if (petState !== 'excited' && petState !== 'surprised' && petState !== 'hidden') {
+          if (idleTime > 6000) setState('sleepy');
+          else if (idleTime > 2500) setState('idle');
+          else setState('follow');
+        }
+
+        // Random speech bubble while following
+        if (performance.now() > nextBubbleAt && petState === 'follow' && !document.body.classList.contains('menu-open')) {
+          if (Math.random() < 0.6) {
+            showBubble(phrases[Math.floor(Math.random() * phrases.length)], 1600);
+          }
+          nextBubbleAt = performance.now() + 12000 + Math.random() * 15000;
+        }
+
+        requestAnimationFrame(petTick);
+      };
+      requestAnimationFrame(petTick);
+
+      // React to interactive elements
+      let excitedTimeout: number | undefined;
+      document.addEventListener('mouseover', (e) => {
+        const t = (e.target as HTMLElement)?.closest('a, button, [data-cursor]');
+        if (t) {
+          setState('excited');
+          lastMoveTime = performance.now();
+          clearTimeout(excitedTimeout);
+          excitedTimeout = window.setTimeout(() => {
+            if (petState === 'excited') setState('follow');
+          }, 800);
+        }
+      });
+
+      // Bounce + surprised on click
+      document.addEventListener('mousedown', (e) => {
+        const target = (e.target as HTMLElement);
+        if (target.closest('input, textarea')) return;
+        cursorPet.classList.add('is-bouncing');
+        setState('surprised');
+        setTimeout(() => cursorPet.classList.remove('is-bouncing'), 500);
+        setTimeout(() => setState('follow'), 600);
+      });
+
+      // Hide near edges
+      onMouseMove((e) => {
+        const margin = 40;
+        const isEdge = e.clientX < margin || e.clientX > window.innerWidth - margin ||
+                       e.clientY < margin || e.clientY > window.innerHeight - margin;
+        if (isEdge) setState('hidden');
+        else if (petState === 'hidden') setState('follow');
+      });
+
+      // Greeting on first load
+      setTimeout(() => showBubble('oi! ✦', 2200), 2200);
+    }
+
+    // ─── VORONOI PATTERN BACKGROUND ─────────────────────────
+    const voronoiCanvas = document.getElementById('voronoi-canvas') as HTMLCanvasElement | null;
+    if (voronoiCanvas) {
+      const vctx = voronoiCanvas.getContext('2d');
+      const dprV = window.devicePixelRatio || 1;
+      let cells: { x: number; y: number; vx: number; vy: number }[] = [];
+
+      const resizeVoronoi = () => {
+        voronoiCanvas.width = window.innerWidth * dprV;
+        voronoiCanvas.height = window.innerHeight * dprV;
+        voronoiCanvas.style.width = window.innerWidth + 'px';
+        voronoiCanvas.style.height = window.innerHeight + 'px';
+        cells = [];
+        const count = 32;
+        for (let i = 0; i < count; i++) {
+          cells.push({
+            x: Math.random() * voronoiCanvas.width,
+            y: Math.random() * voronoiCanvas.height,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+          });
+        }
+      };
+      resizeVoronoi();
+      window.addEventListener('resize', resizeVoronoi);
+
+      let vMouseX = -9999, vMouseY = -9999;
+      onMouseMove((e) => {
+        vMouseX = e.clientX * dprV;
+        vMouseY = e.clientY * dprV;
+      });
+
+      const drawVoronoi = () => {
+        if (!vctx || !pageActive) {
+          requestAnimationFrame(drawVoronoi);
+          return;
+        }
+        // Move cells slowly
+        cells.forEach((c) => {
+          c.x += c.vx; c.y += c.vy;
+          if (c.x < 0 || c.x > voronoiCanvas.width) c.vx *= -1;
+          if (c.y < 0 || c.y > voronoiCanvas.height) c.vy *= -1;
+        });
+
+        // Render using cell-anchored polygon approximation via grid sampling
+        const cellSize = 24 * dprV;
+        vctx.clearRect(0, 0, voronoiCanvas.width, voronoiCanvas.height);
+        const isDark = document.body.classList.contains('theme-dark');
+        const baseColor = isDark ? 'rgba(255, 255, 255,' : 'rgba(93, 79, 168,';
+
+        for (let y = 0; y < voronoiCanvas.height; y += cellSize) {
+          for (let x = 0; x < voronoiCanvas.width; x += cellSize) {
+            let minD = Infinity, secondD = Infinity;
+            for (const c of cells) {
+              const d = (c.x - x) ** 2 + (c.y - y) ** 2;
+              if (d < minD) { secondD = minD; minD = d; }
+              else if (d < secondD) secondD = d;
+            }
+            // Cell border heuristic
+            const edge = Math.max(0, 1 - Math.abs(secondD - minD) / 6000);
+            if (edge > 0.05) {
+              const mouseDist = Math.hypot(x - vMouseX, y - vMouseY) / dprV;
+              const boost = Math.max(0, 1 - mouseDist / 250);
+              vctx.fillStyle = `${baseColor} ${edge * (0.08 + boost * 0.25)})`;
+              vctx.fillRect(x, y, cellSize, cellSize);
+            }
+          }
+        }
+        requestAnimationFrame(drawVoronoi);
+      };
+      requestAnimationFrame(drawVoronoi);
+    }
+
+    // ─── SOBRE HORIZONTAL SCROLL (pinned) ───────────────────
+    const sobreTrack = document.getElementById('sobre-track');
+    const sobrePin = document.getElementById('sobre-pin');
+    const sobreDots = document.querySelectorAll('.sobre-h-dot');
+    if (sobreTrack && sobrePin && isDesktop) {
+      const getDist = () => sobreTrack.scrollWidth - window.innerWidth + 80;
+      gsap.to(sobreTrack, {
+        x: () => -getDist(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sobrePin,
+          start: 'top top',
+          end: () => `+=${getDist()}`,
+          pin: true,
+          scrub: 1.4,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+          pinSpacing: true,
+          fastScrollEnd: 800,
+          onUpdate: (self) => {
+            const idx = Math.min(sobreDots.length - 1, Math.floor(self.progress * sobreDots.length));
+            sobreDots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+          },
+        },
+      });
+    }
+
+    // ─── 3D CARD FLIP NOS PROJETOS ──────────────────────────
+    document.querySelectorAll<HTMLElement>('.projeto-panel').forEach((panel) => {
+      const vis = panel.querySelector<HTMLElement>('.projeto-panel-visual');
+      if (!vis) return;
+
+      // Read project info from sibling content
+      const meta = panel.querySelector('.projeto-panel-meta');
+      const metaSpans = meta?.querySelectorAll('span');
+      const projetoNum = metaSpans?.[0]?.textContent?.replace('Projeto ', '').trim() || '00';
+      const projetoYear = metaSpans?.[1]?.textContent?.trim() || '';
+      const tags = Array.from(panel.querySelectorAll('.projeto-panel-tags .tag')).map(t => t.textContent?.trim()).filter(Boolean) as string[];
+
+      vis.classList.add('has-flip');
+      const img = vis.querySelector('img, .projeto-panel-placeholder');
+
+      const inner = document.createElement('div');
+      inner.className = 'flip-inner';
+      const front = document.createElement('div');
+      front.className = 'flip-face flip-face-front';
+      const back = document.createElement('div');
+      back.className = 'flip-face flip-face-back';
+
+      if (img) front.appendChild(img.cloneNode(true));
+      vis.innerHTML = '';
+
+      const tagsHtml = tags.map(t => `<div class="flip-stat"><span class="flip-stat-val">·</span><span class="flip-stat-label">${t}</span></div>`).join('');
+      back.innerHTML = `
+        <div>
+          <p class="flip-back-eyebrow">Projeto ${projetoNum} · ${projetoYear}</p>
+        </div>
+        <div class="flip-back-stats">
+          ${tagsHtml}
+        </div>
+        <div class="flip-back-footer">
+          <span>Tecnologias</span>
+          <span>Ver case ↗</span>
+        </div>
+      `;
+
+      inner.appendChild(front);
+      inner.appendChild(back);
+      vis.appendChild(inner);
+
+      const toggle = document.createElement('button');
+      toggle.className = 'flip-toggle';
+      toggle.setAttribute('aria-label', 'Virar card');
+      toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>';
+      vis.appendChild(toggle);
+
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        vis.classList.toggle('is-flipped');
+      });
+    });
+
+    // ─── 3D BK DEDICATED SCENE ──────────────────────────────
+    (async () => {
+      const canvas = document.getElementById('scene-3d-canvas') as HTMLCanvasElement | null;
+      const section = document.getElementById('scene-3d');
+      if (!canvas || !section) return;
+      const THREE = await import('three');
+
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+      camera.position.z = 7;
+
+      // Lighting (3-point setup for clean look without harsh reflections)
+      scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+      const key = new THREE.DirectionalLight(0xffffff, 1.1);
+      key.position.set(3, 4, 5);
+      scene.add(key);
+      const fill = new THREE.DirectionalLight(0xa898d8, 0.45);
+      fill.position.set(-4, -1, 3);
+      scene.add(fill);
+      const rim = new THREE.DirectionalLight(0x6a5a9e, 0.5);
+      rim.position.set(0, -3, -4);
+      scene.add(rim);
+
+      // Soft lavender material (no metalness = no flickering reflections)
+      const mat = new THREE.MeshLambertMaterial({ color: 0xc8bce2 });
+
+      const group = new THREE.Group();
+
+      // ─── B letter: NON-overlapping pieces ──────────────────
+      const bGroup = new THREE.Group();
+      // Spine: full height, on the left
+      const bSpine = new THREE.Mesh(new THREE.BoxGeometry(0.4, 2.6, 0.55), mat);
+      bSpine.position.x = -0.5;
+      bGroup.add(bSpine);
+      // Top horizontal: starts right where spine ends
+      const bTop = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.4, 0.55), mat);
+      bTop.position.set(0.125, 1.1, 0);
+      bGroup.add(bTop);
+      // Middle horizontal
+      const bMid = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.4, 0.55), mat);
+      bMid.position.set(0.125, 0, 0);
+      bGroup.add(bMid);
+      // Bottom horizontal
+      const bBot = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.4, 0.55), mat);
+      bBot.position.set(0.125, -1.1, 0);
+      bGroup.add(bBot);
+      // Upper-right vertical (between top and mid)
+      const bRight1 = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.7, 0.55), mat);
+      bRight1.position.set(0.375, 0.55, 0);
+      bGroup.add(bRight1);
+      // Lower-right vertical (between mid and bot)
+      const bRight2 = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.7, 0.55), mat);
+      bRight2.position.set(0.375, -0.55, 0);
+      bGroup.add(bRight2);
+      bGroup.position.x = -1.6;
+
+      // ─── K letter: NON-overlapping pieces ──────────────────
+      const kGroup = new THREE.Group();
+      // Spine
+      const kSpine = new THREE.Mesh(new THREE.BoxGeometry(0.4, 2.6, 0.55), mat);
+      kSpine.position.x = -0.45;
+      kGroup.add(kSpine);
+      // Upper diagonal arm (positioned to start where spine ends, going up-right)
+      const kUp = new THREE.Mesh(new THREE.BoxGeometry(0.32, 1.5, 0.55), mat);
+      kUp.position.set(0.2, 0.6, 0);
+      kUp.rotation.z = -Math.PI / 4;
+      kGroup.add(kUp);
+      // Lower diagonal arm
+      const kDown = new THREE.Mesh(new THREE.BoxGeometry(0.32, 1.5, 0.55), mat);
+      kDown.position.set(0.2, -0.6, 0);
+      kDown.rotation.z = Math.PI / 4;
+      kGroup.add(kDown);
+      kGroup.position.x = 1.5;
+
+      group.add(bGroup);
+      group.add(kGroup);
+      scene.add(group);
+
+      let targetY = 0, targetX = 0;
+      let curY = 0, curX = 0;
+      let dragging = false, lastX = 0, lastY = 0;
+
+      const resize = () => {
+        const w = section.offsetWidth;
+        const h = section.offsetHeight;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+      };
+      resize();
+      window.addEventListener('resize', resize);
+
+      section.addEventListener('mousemove', (e) => {
+        if (dragging) return;
+        const rect = section.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        targetY = x * 1.2;
+        targetX = y * -0.6;
+      });
+
+      section.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        dragging = true;
+        lastX = e.clientX;
+        lastY = e.clientY;
+        section.setPointerCapture(e.pointerId);
+      });
+      window.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        targetY += (e.clientX - lastX) * 0.01;
+        targetX -= (e.clientY - lastY) * 0.01;
+        lastX = e.clientX; lastY = e.clientY;
+      });
+      const bkEnd = () => { dragging = false; };
+      window.addEventListener('pointerup', bkEnd);
+      window.addEventListener('pointercancel', bkEnd);
+
+      const clock3Start = performance.now();
+      let visible = false;
+      const obs = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }, { threshold: 0.05 });
+      obs.observe(section);
+
+      const loop = () => {
+        if (visible && pageActive) {
+          curY += (targetY - curY) * 0.06;
+          curX += (targetX - curX) * 0.06;
+          group.rotation.y = curY + Math.sin(((performance.now() - clock3Start) / 1000) * 0.3) * 0.05;
+          group.rotation.x = curX;
+          renderer.render(scene, camera);
+        }
+        requestAnimationFrame(loop);
+      };
+      loop();
+    })();
+
+    // ─── PHYSICS PLAYGROUND (Matter.js) ─────────────────────
+    (async () => {
+      const physicsCanvas = document.getElementById('physics-canvas') as HTMLCanvasElement | null;
+      const physicsSection = document.getElementById('physics');
+      if (!physicsCanvas || !physicsSection) return;
+
+      const Matter = await import('matter-js');
+      const { Engine, Runner, Bodies, Mouse, MouseConstraint, World, Composite } = Matter;
+      type PhysicsBody = Matter.Body & { customW: number; customH: number; label: string };
+
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      let w = physicsSection.offsetWidth;
+      let h = physicsSection.offsetHeight;
+
+      // Canvas setup (ONCE)
+      const setupCanvas = () => {
+        w = physicsSection.offsetWidth;
+        h = physicsSection.offsetHeight;
+        physicsCanvas.width = w * dpr;
+        physicsCanvas.height = h * dpr;
+        physicsCanvas.style.width = w + 'px';
+        physicsCanvas.style.height = h + 'px';
+      };
+      setupCanvas();
+
+      const ctx = physicsCanvas.getContext('2d');
+      if (!ctx) return;
+
+      const engine = Engine.create();
+      engine.world.gravity.y = 0.7;
+
+      // Walls (no render, invisible)
+      const wallOpts = { isStatic: true, render: { visible: false } };
+      let walls = [
+        Bodies.rectangle(w / 2, h + 30, w, 60, wallOpts),
+        Bodies.rectangle(-30, h / 2, 60, h, wallOpts),
+        Bodies.rectangle(w + 30, h / 2, 60, h, wallOpts),
+        Bodies.rectangle(w / 2, -30, w, 60, wallOpts),
+      ];
+      World.add(engine.world, walls);
+
+      // Tool tags as physics bodies
+      const tools = ['Photoshop', 'Illustrator', 'AE', 'Premiere', 'Figma', 'HTML', 'CSS', 'JS', 'Moodle', 'Power Automate'];
+      const bodies: PhysicsBody[] = [];
+
+      ctx.font = '500 12px "DM Sans", system-ui';
+      tools.forEach((tool, i) => {
+        const x = (w / (tools.length + 1)) * (i + 1);
+        const y = 60 + Math.random() * 80;
+        const tw = ctx.measureText(tool).width;
+        const rectW = tw + 28;
+        const rectH = 30;
+        const body = Bodies.rectangle(x, y, rectW, rectH, {
+          chamfer: { radius: 15 },
+          restitution: 0.55,
+          friction: 0.12,
+          frictionAir: 0.012,
+          density: 0.002,
+        }) as PhysicsBody;
+        body.label = tool;
+        body.customW = rectW;
+        body.customH = rectH;
+        bodies.push(body);
+      });
+      World.add(engine.world, bodies);
+
+      // Mouse drag
+      const mouse = Mouse.create(physicsCanvas);
+      mouse.pixelRatio = dpr;
+      const mouseConstraint = MouseConstraint.create(engine, {
+        mouse,
+        constraint: {
+          stiffness: 0.2,
+          damping: 0.1,
+          render: { visible: false },
+        },
+      });
+      World.add(engine.world, mouseConstraint);
+
+      // Properly create and run a Runner
+      const runner = Runner.create();
+      Runner.run(runner, engine);
+
+      // Resize handler
+      window.addEventListener('resize', () => {
+        Composite.remove(engine.world, walls);
+        setupCanvas();
+        walls = [
+          Bodies.rectangle(w / 2, h + 30, w, 60, wallOpts),
+          Bodies.rectangle(-30, h / 2, 60, h, wallOpts),
+          Bodies.rectangle(w + 30, h / 2, 60, h, wallOpts),
+          Bodies.rectangle(w / 2, -30, w, 60, wallOpts),
+        ];
+        World.add(engine.world, walls);
+      });
+
+      // Custom render loop (draws pills with labels)
+      const physicsVisible = observeVisibility(physicsSection);
+      const draw = () => {
+        if (!pageActive || !physicsVisible.current) {
+          requestAnimationFrame(draw);
+          return;
+        }
+        // Reset transform and clear (no resize per frame)
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, h);
+
+        bodies.forEach((body) => {
+          const rectW = body.customW;
+          const rectH = body.customH;
+          ctx.save();
+          ctx.translate(body.position.x, body.position.y);
+          ctx.rotate(body.angle);
+          // Pill
+          ctx.fillStyle = '#FFFFFF';
+          ctx.strokeStyle = '#D5D5D8';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          if (ctx.roundRect) {
+            ctx.roundRect(-rectW / 2, -rectH / 2, rectW, rectH, rectH / 2);
+          } else {
+            // Fallback for older browsers
+            const r = rectH / 2;
+            ctx.moveTo(-rectW / 2 + r, -rectH / 2);
+            ctx.arcTo(rectW / 2, -rectH / 2, rectW / 2, rectH / 2, r);
+            ctx.arcTo(rectW / 2, rectH / 2, -rectW / 2, rectH / 2, r);
+            ctx.arcTo(-rectW / 2, rectH / 2, -rectW / 2, -rectH / 2, r);
+            ctx.arcTo(-rectW / 2, -rectH / 2, rectW / 2, -rectH / 2, r);
+          }
+          ctx.fill();
+          ctx.stroke();
+          // Label
+          ctx.fillStyle = '#0F0F10';
+          ctx.font = '500 12px "DM Sans", system-ui';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(body.label, 0, 1);
+          ctx.restore();
+        });
+
+        requestAnimationFrame(draw);
+      };
+      draw();
+    })();
+
+    // ─── PONG MINI-GAME (easter egg após Konami extra: "pong") ─────
+    const pongOverlay = document.getElementById('pong-overlay');
+    const pongCanvas = document.getElementById('pong-canvas') as HTMLCanvasElement | null;
+    const pongClose = document.getElementById('pong-close');
+    const pongScorePlayer = document.getElementById('pong-score-player');
+    const pongScoreAi = document.getElementById('pong-score-ai');
+    let pongActive = false;
+    let pongAnim = 0;
+
+    const startPong = () => {
+      if (!pongOverlay || !pongCanvas) return;
+      pongOverlay.classList.add('is-active');
+      pongOverlay.setAttribute('aria-hidden', 'false');
+      pongActive = true;
+      const ctx = pongCanvas.getContext('2d');
+      if (!ctx) return;
+
+      const W = pongCanvas.width, H = pongCanvas.height;
+      let playerY = H / 2;
+      let aiY = H / 2;
+      let ballX = W / 2, ballY = H / 2;
+      let ballVx = 6, ballVy = 3;
+      let scoreP = 0, scoreA = 0;
+      const paddleH = 80, paddleW = 8;
+
+      const onMove = (e: MouseEvent) => {
+        const rect = pongCanvas.getBoundingClientRect();
+        playerY = (e.clientY - rect.top) * (H / rect.height);
+      };
+      pongCanvas.addEventListener('mousemove', onMove);
+
+      const reset = (dir: number) => {
+        ballX = W / 2; ballY = H / 2;
+        ballVx = 6 * dir; ballVy = (Math.random() - 0.5) * 6;
+      };
+
+      const tick = () => {
+        if (!pongActive) return;
+        // Update AI
+        const aiTarget = ballVx > 0 ? ballY : H / 2;
+        aiY += (aiTarget - aiY) * 0.06;
+
+        // Update ball
+        ballX += ballVx;
+        ballY += ballVy;
+
+        if (ballY < 0 || ballY > H) ballVy *= -1;
+
+        // Player collision
+        if (ballX < paddleW + 14 && Math.abs(ballY - playerY) < paddleH / 2) {
+          ballVx = Math.abs(ballVx) * 1.05;
+          ballVy += (ballY - playerY) * 0.1;
+        }
+        // AI collision
+        if (ballX > W - paddleW - 14 && Math.abs(ballY - aiY) < paddleH / 2) {
+          ballVx = -Math.abs(ballVx) * 1.05;
+          ballVy += (ballY - aiY) * 0.1;
+        }
+
+        // Score
+        if (ballX < 0) { scoreA++; reset(1); }
+        if (ballX > W) { scoreP++; reset(-1); }
+
+        if (pongScorePlayer) pongScorePlayer.textContent = String(scoreP);
+        if (pongScoreAi) pongScoreAi.textContent = String(scoreA);
+
+        // Draw
+        ctx.fillStyle = '#0A0A0B';
+        ctx.fillRect(0, 0, W, H);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+        ctx.fillRect(W / 2 - 1, 0, 2, H);
+        ctx.fillStyle = '#5D4FA8';
+        ctx.fillRect(10, playerY - paddleH / 2, paddleW, paddleH);
+        ctx.fillRect(W - 10 - paddleW, aiY - paddleH / 2, paddleW, paddleH);
+        ctx.fillStyle = '#fff';
+        ctx.beginPath();
+        ctx.arc(ballX, ballY, 6, 0, Math.PI * 2);
+        ctx.fill();
+
+        pongAnim = requestAnimationFrame(tick);
+      };
+      tick();
+    };
+
+    const stopPong = () => {
+      pongActive = false;
+      cancelAnimationFrame(pongAnim);
+      pongOverlay?.classList.remove('is-active');
+      pongOverlay?.setAttribute('aria-hidden', 'true');
+    };
+
+    pongClose?.addEventListener('click', stopPong);
+
+    // Add "pong" to easter codes
+    easterCodes['pong'] = startPong;
+    easterCodes['game'] = startPong;
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pongActive) stopPong();
+    });
+
+    // ─── THREE.JS PARTICLE FIELD (hero background) ─────────────
+    (async () => {
+      const heroCanvas = document.getElementById('hero-canvas') as HTMLCanvasElement | null;
+      const heroParent = document.querySelector('.hero') as HTMLElement | null;
+      if (!heroCanvas || !heroParent) return;
+
+      const THREE = await import('three');
+      const renderer = new THREE.WebGLRenderer({
+        canvas: heroCanvas,
+        alpha: true,
+        antialias: true,
+      });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
+      camera.position.z = 6;
+
+      // Floating particles
+      const count = 280;
+      const positions = new Float32Array(count * 3);
+      const scales = new Float32Array(count);
+      for (let i = 0; i < count; i++) {
+        positions[i * 3]     = (Math.random() - 0.5) * 14;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 9;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 8;
+        scales[i] = Math.random() * 0.5 + 0.5;
+      }
+      const geometry = new THREE.BufferGeometry();
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('size', new THREE.BufferAttribute(scales, 1));
+
+      const material = new THREE.PointsMaterial({
+        size: 0.04,
+        color: 0x5D4FA8,
+        transparent: true,
+        opacity: 0.55,
+        sizeAttenuation: true,
+        depthWrite: false,
+      });
+      const points = new THREE.Points(geometry, material);
+      scene.add(points);
+
+      // Subtle wireframe icosahedron
+      const icoGeom = new THREE.IcosahedronGeometry(1.4, 1);
+      const icoMat = new THREE.MeshBasicMaterial({
+        color: 0x5D4FA8,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.1,
+      });
+      const ico = new THREE.Mesh(icoGeom, icoMat);
+      ico.position.set(2.5, -0.5, 0);
+      scene.add(ico);
+
+      let mx3 = 0, my3 = 0;
+      onMouseMove((e) => {
+        mx3 = (e.clientX / window.innerWidth - 0.5) * 0.4;
+        my3 = (e.clientY / window.innerHeight - 0.5) * -0.3;
+      });
+
+      const resize = () => {
+        const w = heroParent.offsetWidth;
+        const h = heroParent.offsetHeight;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+      };
+      resize();
+      window.addEventListener('resize', resize);
+
+      const clockStart = performance.now();
+      const heroVisible = observeVisibility(heroParent);
+      const renderLoop = () => {
+        if (!pageActive || !heroVisible.current) {
+          requestAnimationFrame(renderLoop);
+          return;
+        }
+        const t = (performance.now() - clockStart) / 1000;
+        points.rotation.x = Math.sin(t * 0.05) * 0.15;
+        points.rotation.y += 0.0008;
+        points.rotation.y += (mx3 - points.rotation.y) * 0.01;
+
+        ico.rotation.x = t * 0.12;
+        ico.rotation.y = t * 0.08;
+        ico.rotation.z = t * 0.05;
+        ico.position.x = 2.5 + mx3 * 0.5;
+        ico.position.y = -0.5 + my3 * 0.4;
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(renderLoop);
+      };
+      renderLoop();
+    })();
+  </script>
+</Layout>
